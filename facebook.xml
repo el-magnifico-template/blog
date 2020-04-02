@@ -4,17 +4,17 @@
     <title>My  awesome title</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
     <link>/</link>
-    <atom:link href="/instantfeed.xml" rel="self" type="application/rss+xml" />
-    <updated>2020-04-02T17:32:08+01:00</updated>
-    <id></id>
+    <atom:link href="http://localhost:4000/instantfeed.xml" rel="self" type="application/rss+xml" />
+    <updated>2020-04-02T17:45:43+01:00</updated>
+    <id>http://localhost:4000</id>
     <author>
       <name></name>
     </author>
     
       <item>
         <title>Welcome to Jekyll!</title>
-        <link>/welcome-to-jekyll</link>
-        <guid isPermaLink="true">/welcome-to-jekyll</guid>
+        <link>http://localhost:4000/welcome-to-jekyll</link>
+        <guid isPermaLink="true">http://localhost:4000/welcome-to-jekyll</guid>
         <pubDate>Mon, 04 Feb 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -40,7 +40,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/welcome-to-jekyll">
+                <link rel="canonical" href="http://localhost:4000/welcome-to-jekyll">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -89,8 +89,8 @@
     
       <item>
         <title>The first mass-produced book to deviate from a rectilinear format</title>
-        <link>/first-mass-produced</link>
-        <guid isPermaLink="true">/first-mass-produced</guid>
+        <link>http://localhost:4000/first-mass-produced</link>
+        <guid isPermaLink="true">http://localhost:4000/first-mass-produced</guid>
         <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -125,7 +125,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/first-mass-produced">
+                <link rel="canonical" href="http://localhost:4000/first-mass-produced">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -183,8 +183,8 @@
     
       <item>
         <title>Education must also train one for quick, resolute and effective thinking.</title>
-        <link>/education</link>
-        <guid isPermaLink="true">/education</guid>
+        <link>http://localhost:4000/education</link>
+        <guid isPermaLink="true">http://localhost:4000/education</guid>
         <pubDate>Fri, 01 Feb 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -236,7 +236,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/education">
+                <link rel="canonical" href="http://localhost:4000/education">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -311,8 +311,8 @@
     
       <item>
         <title>Accumulated experience of social living</title>
-        <link>/acumulated-experience</link>
-        <guid isPermaLink="true">/acumulated-experience</guid>
+        <link>http://localhost:4000/acumulated-experience</link>
+        <guid isPermaLink="true">http://localhost:4000/acumulated-experience</guid>
         <pubDate>Wed, 30 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -335,7 +335,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/acumulated-experience">
+                <link rel="canonical" href="http://localhost:4000/acumulated-experience">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -381,8 +381,8 @@
     
       <item>
         <title>About Bundler</title>
-        <link>/about-bundler</link>
-        <guid isPermaLink="true">/about-bundler</guid>
+        <link>http://localhost:4000/about-bundler</link>
+        <guid isPermaLink="true">http://localhost:4000/about-bundler</guid>
         <pubDate>Tue, 29 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -403,7 +403,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/about-bundler">
+                <link rel="canonical" href="http://localhost:4000/about-bundler">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -447,8 +447,8 @@
     
       <item>
         <title>We all wait for summer</title>
-        <link>/we-all-wait-for-summer</link>
-        <guid isPermaLink="true">/we-all-wait-for-summer</guid>
+        <link>http://localhost:4000/we-all-wait-for-summer</link>
+        <guid isPermaLink="true">http://localhost:4000/we-all-wait-for-summer</guid>
         <pubDate>Mon, 28 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -463,7 +463,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/we-all-wait-for-summer">
+                <link rel="canonical" href="http://localhost:4000/we-all-wait-for-summer">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -501,8 +501,8 @@
     
       <item>
         <title>Tree of Codes</title>
-        <link>/tree-of-codes</link>
-        <guid isPermaLink="true">/tree-of-codes</guid>
+        <link>http://localhost:4000/tree-of-codes</link>
+        <guid isPermaLink="true">http://localhost:4000/tree-of-codes</guid>
         <pubDate>Sun, 27 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -526,7 +526,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/tree-of-codes">
+                <link rel="canonical" href="http://localhost:4000/tree-of-codes">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -573,8 +573,8 @@
     
       <item>
         <title>Red Riding Hood</title>
-        <link>/red-riding</link>
-        <guid isPermaLink="true">/red-riding</guid>
+        <link>http://localhost:4000/red-riding</link>
+        <guid isPermaLink="true">http://localhost:4000/red-riding</guid>
         <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -597,7 +597,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/red-riding">
+                <link rel="canonical" href="http://localhost:4000/red-riding">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -643,8 +643,8 @@
     
       <item>
         <title>Press and education</title>
-        <link>/press-and-education</link>
-        <guid isPermaLink="true">/press-and-education</guid>
+        <link>http://localhost:4000/press-and-education</link>
+        <guid isPermaLink="true">http://localhost:4000/press-and-education</guid>
         <pubDate>Fri, 25 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -670,7 +670,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/press-and-education">
+                <link rel="canonical" href="http://localhost:4000/press-and-education">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -719,8 +719,8 @@
     
       <item>
         <title>Options for creating a new site with Jekyll</title>
-        <link>/options-for-creating-new-site-with-jekyll</link>
-        <guid isPermaLink="true">/options-for-creating-new-site-with-jekyll</guid>
+        <link>http://localhost:4000/options-for-creating-new-site-with-jekyll</link>
+        <guid isPermaLink="true">http://localhost:4000/options-for-creating-new-site-with-jekyll</guid>
         <pubDate>Wed, 23 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -741,7 +741,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="/options-for-creating-new-site-with-jekyll">
+                <link rel="canonical" href="http://localhost:4000/options-for-creating-new-site-with-jekyll">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
