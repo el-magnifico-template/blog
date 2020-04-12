@@ -19,7 +19,7 @@ const dependenciesUrls = [
 
 
 
-"/pages/random/",
+"/pages/random",
 
 
 

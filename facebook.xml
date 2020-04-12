@@ -5,7 +5,7 @@
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
     <link>/</link>
     <atom:link href="https://tellmemore.life/instantfeed.xml" rel="self" type="application/rss+xml" />
-    <updated>2020-04-12T13:16:30+01:00</updated>
+    <updated>2020-04-12T16:13:00+01:00</updated>
     <id>https://tellmemore.life</id>
     <author>
       <name></name>
@@ -13,8 +13,8 @@
     
       <item>
         <title>Welcome to Jekyll!</title>
-        <link>https://tellmemore.life/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">https://tellmemore.life/welcome-to-jekyll/</guid>
+        <link>https://tellmemore.life/welcome-to-jekyll</link>
+        <guid isPermaLink="true">https://tellmemore.life/welcome-to-jekyll</guid>
         <pubDate>Mon, 04 Feb 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -42,7 +42,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/welcome-to-jekyll/">
+                <link rel="canonical" href="https://tellmemore.life/welcome-to-jekyll">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -93,8 +93,8 @@
     
       <item>
         <title>The first mass-produced book to deviate from a rectilinear format</title>
-        <link>https://tellmemore.life/first-mass-produced/</link>
-        <guid isPermaLink="true">https://tellmemore.life/first-mass-produced/</guid>
+        <link>https://tellmemore.life/first-mass-produced</link>
+        <guid isPermaLink="true">https://tellmemore.life/first-mass-produced</guid>
         <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -129,7 +129,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/first-mass-produced/">
+                <link rel="canonical" href="https://tellmemore.life/first-mass-produced">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -187,8 +187,8 @@
     
       <item>
         <title>Education must also train one for quick, resolute and effective thinking.</title>
-        <link>https://tellmemore.life/education/</link>
-        <guid isPermaLink="true">https://tellmemore.life/education/</guid>
+        <link>https://tellmemore.life/education</link>
+        <guid isPermaLink="true">https://tellmemore.life/education</guid>
         <pubDate>Fri, 01 Feb 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -250,7 +250,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/education/">
+                <link rel="canonical" href="https://tellmemore.life/education">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -335,8 +335,8 @@
     
       <item>
         <title>Accumulated experience of social living</title>
-        <link>https://tellmemore.life/acumulated-experience/</link>
-        <guid isPermaLink="true">https://tellmemore.life/acumulated-experience/</guid>
+        <link>https://tellmemore.life/acumulated-experience</link>
+        <guid isPermaLink="true">https://tellmemore.life/acumulated-experience</guid>
         <pubDate>Wed, 30 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -359,7 +359,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/acumulated-experience/">
+                <link rel="canonical" href="https://tellmemore.life/acumulated-experience">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -405,8 +405,8 @@
     
       <item>
         <title>About Bundler</title>
-        <link>https://tellmemore.life/about-bundler/</link>
-        <guid isPermaLink="true">https://tellmemore.life/about-bundler/</guid>
+        <link>https://tellmemore.life/about-bundler</link>
+        <guid isPermaLink="true">https://tellmemore.life/about-bundler</guid>
         <pubDate>Tue, 29 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -427,7 +427,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/about-bundler/">
+                <link rel="canonical" href="https://tellmemore.life/about-bundler">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -471,8 +471,8 @@
     
       <item>
         <title>We all wait for summer</title>
-        <link>https://tellmemore.life/we-all-wait-for-summer/</link>
-        <guid isPermaLink="true">https://tellmemore.life/we-all-wait-for-summer/</guid>
+        <link>https://tellmemore.life/we-all-wait-for-summer</link>
+        <guid isPermaLink="true">https://tellmemore.life/we-all-wait-for-summer</guid>
         <pubDate>Mon, 28 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -487,7 +487,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/we-all-wait-for-summer/">
+                <link rel="canonical" href="https://tellmemore.life/we-all-wait-for-summer">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -525,8 +525,8 @@
     
       <item>
         <title>Tree of Codes</title>
-        <link>https://tellmemore.life/tree-of-codes/</link>
-        <guid isPermaLink="true">https://tellmemore.life/tree-of-codes/</guid>
+        <link>https://tellmemore.life/tree-of-codes</link>
+        <guid isPermaLink="true">https://tellmemore.life/tree-of-codes</guid>
         <pubDate>Sun, 27 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -550,7 +550,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/tree-of-codes/">
+                <link rel="canonical" href="https://tellmemore.life/tree-of-codes">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -597,8 +597,8 @@
     
       <item>
         <title>Red Riding Hood</title>
-        <link>https://tellmemore.life/red-riding/</link>
-        <guid isPermaLink="true">https://tellmemore.life/red-riding/</guid>
+        <link>https://tellmemore.life/red-riding</link>
+        <guid isPermaLink="true">https://tellmemore.life/red-riding</guid>
         <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -621,7 +621,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/red-riding/">
+                <link rel="canonical" href="https://tellmemore.life/red-riding">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -667,8 +667,8 @@
     
       <item>
         <title>Press and education</title>
-        <link>https://tellmemore.life/press-and-education/</link>
-        <guid isPermaLink="true">https://tellmemore.life/press-and-education/</guid>
+        <link>https://tellmemore.life/press-and-education</link>
+        <guid isPermaLink="true">https://tellmemore.life/press-and-education</guid>
         <pubDate>Fri, 25 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -694,7 +694,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/press-and-education/">
+                <link rel="canonical" href="https://tellmemore.life/press-and-education">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
@@ -743,8 +743,8 @@
     
       <item>
         <title>Options for creating a new site with Jekyll</title>
-        <link>https://tellmemore.life/options-for-creating-new-site-with-jekyll/</link>
-        <guid isPermaLink="true">https://tellmemore.life/options-for-creating-new-site-with-jekyll/</guid>
+        <link>https://tellmemore.life/options-for-creating-new-site-with-jekyll</link>
+        <guid isPermaLink="true">https://tellmemore.life/options-for-creating-new-site-with-jekyll</guid>
         <pubDate>Wed, 23 Jan 2019 00:00:00 +0100</pubDate>
         <author></author>
         
@@ -765,7 +765,7 @@
                 <html lang="en" prefix="op: http://media.facebook.com/op#">
               <head>
                 <meta charset="utf-8">
-                <link rel="canonical" href="https://tellmemore.life/options-for-creating-new-site-with-jekyll/">
+                <link rel="canonical" href="https://tellmemore.life/options-for-creating-new-site-with-jekyll">
                 <meta property="op:markup_version" content="v1.0">
               </head>
               <body>
