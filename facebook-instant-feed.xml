@@ -1,0 +1,662 @@
+<rss version="2.0"
+xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+  	<title></title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+    <link>https://tellmemore.life/</link>
+    <lastBuildDate>2020-04-12T13:16:30+01:00</lastBuildDate>
+    <language>en-gb</language>
+    
+    <item>
+      <title>Welcome to Jekyll!</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/welcome-to-jekyll/</link>
+      <guid isPermaLink="true">https://tellmemore.life/welcome-to-jekyll/</guid>
+
+      <pubDate>2019-02-04T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/welcome-to-jekyll/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/welcome-to-jekyll/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="Welcome to Jekyll!" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <iframe src="/default.asp"></iframe>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-02-04T00:00:00+01:00">February 04, 2019</time>
+			      <time class="op-modified" dateTime="2019-02-04T00:00:00+01:00">February 04, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>The first mass-produced book to deviate from a rectilinear format</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/first-mass-produced/</link>
+      <guid isPermaLink="true">https://tellmemore.life/first-mass-produced/</guid>
+
+      <pubDate>2019-02-02T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/first-mass-produced/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/first-mass-produced/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="The first mass-produced book to deviate from a rectilinear format" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p>The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-02-02T00:00:00+01:00">February 02, 2019</time>
+			      <time class="op-modified" dateTime="2019-02-02T00:00:00+01:00">February 02, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>Education must also train one for quick, resolute and effective thinking.</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/education/</link>
+      <guid isPermaLink="true">https://tellmemore.life/education/</guid>
+
+      <pubDate>2019-02-01T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/education/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/education/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="Education must also train one for quick, resolute and effective thinking." />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			            <iframe src="https://www.w3schools.com/default.asp"></iframe>
+<p><img src="/assets/images/8.webp" alt=""></p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-02-01T00:00:00+01:00">February 01, 2019</time>
+			      <time class="op-modified" dateTime="2019-02-01T00:00:00+01:00">February 01, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>Accumulated experience of social living</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/acumulated-experience/</link>
+      <guid isPermaLink="true">https://tellmemore.life/acumulated-experience/</guid>
+
+      <pubDate>2019-01-30T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/acumulated-experience/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/acumulated-experience/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="Accumulated experience of social living" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p>The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-01-30T00:00:00+01:00">January 30, 2019</time>
+			      <time class="op-modified" dateTime="2019-01-30T00:00:00+01:00">January 30, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>About Bundler</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/about-bundler/</link>
+      <guid isPermaLink="true">https://tellmemore.life/about-bundler/</guid>
+
+      <pubDate>2019-01-29T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/about-bundler/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/about-bundler/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="About Bundler" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p><code class="highlighter-rouge">gem install bundler</code> installs the bundler gem through RubyGems. You only need to install it once - not every time you create a new Jekyll project. Here are some additional details:</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-01-29T00:00:00+01:00">January 29, 2019</time>
+			      <time class="op-modified" dateTime="2019-01-29T00:00:00+01:00">January 29, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>We all wait for summer</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/we-all-wait-for-summer/</link>
+      <guid isPermaLink="true">https://tellmemore.life/we-all-wait-for-summer/</guid>
+
+      <pubDate>2019-01-28T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/we-all-wait-for-summer/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/we-all-wait-for-summer/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="We all wait for summer" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p>This is changed. As I engage in the so-called “bull sessions” around and about the school, I too often find that most college men have a misconception of the purpose of education. Most of the “brethren” think that <a href="#">education should equip</a> them with the proper instruments of exploitation so that they can forever trample over the masses. Still others think that education should furnish them with noble ends rather than means to an end.</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-01-28T00:00:00+01:00">January 28, 2019</time>
+			      <time class="op-modified" dateTime="2019-01-28T00:00:00+01:00">January 28, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>Tree of Codes</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/tree-of-codes/</link>
+      <guid isPermaLink="true">https://tellmemore.life/tree-of-codes/</guid>
+
+      <pubDate>2019-01-27T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/tree-of-codes/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/tree-of-codes/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="Tree of Codes" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p>The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-01-27T00:00:00+01:00">January 27, 2019</time>
+			      <time class="op-modified" dateTime="2019-01-27T00:00:00+01:00">January 27, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>Red Riding Hood</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/red-riding/</link>
+      <guid isPermaLink="true">https://tellmemore.life/red-riding/</guid>
+
+      <pubDate>2019-01-26T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/red-riding/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/red-riding/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="Red Riding Hood" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p>The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-01-26T00:00:00+01:00">January 26, 2019</time>
+			      <time class="op-modified" dateTime="2019-01-26T00:00:00+01:00">January 26, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>Press and education</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/press-and-education/</link>
+      <guid isPermaLink="true">https://tellmemore.life/press-and-education/</guid>
+
+      <pubDate>2019-01-25T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/press-and-education/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/press-and-education/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="Press and education" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p>Even the press, the classroom, the platform, and the pulpit in many instances do not give us objective and unbiased truths. To save man from the morass of propaganda, in my opinion, is one of the chief aims of education. Education must enable one to sift and weigh evidence, to discern the true from the false, the real from the unreal, and the facts from the fiction.</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-01-25T00:00:00+01:00">January 25, 2019</time>
+			      <time class="op-modified" dateTime="2019-01-25T00:00:00+01:00">January 25, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>Options for creating a new site with Jekyll</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/options-for-creating-new-site-with-jekyll/</link>
+      <guid isPermaLink="true">https://tellmemore.life/options-for-creating-new-site-with-jekyll/</guid>
+
+      <pubDate>2019-01-23T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/options-for-creating-new-site-with-jekyll/">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/options-for-creating-new-site-with-jekyll/" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="Options for creating a new site with Jekyll" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p><code class="highlighter-rouge">jekyll new &lt;PATH&gt;</code> installs a new Jekyll site at the path specified (relative to current directory). In this case, Jekyll will be installed in a directory called <code class="highlighter-rouge">myblog</code>. Here are some additional details:</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-01-23T00:00:00+01:00">January 23, 2019</time>
+			      <time class="op-modified" dateTime="2019-01-23T00:00:00+01:00">January 23, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+  </channel>
+</rss>

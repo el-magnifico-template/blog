@@ -11,21 +11,29 @@ const dependenciesUrls = [
 
 
 
+"amp",
+
+
+
 "offline.html",
 
 
 
-"/pages/random.html",
+"/pages/random/",
 
 
 
-"tags",
+"/search/",
+
+
+
+"test",
 
 
   "/manifest.json",
   "/favicon.ico",
     "/",
-   "/img/online.svg"
+   "/assets/online.svg"
 ];
 
 self.addEventListener('install', (event) => {
