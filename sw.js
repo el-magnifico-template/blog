@@ -27,6 +27,10 @@ const dependenciesUrls = [
 
 
 
+"tags",
+
+
+
 "test",
 
 
