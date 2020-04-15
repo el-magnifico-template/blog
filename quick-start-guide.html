@@ -187,8 +187,8 @@
 <link rel="icon" type="image/png" sizes="48x48" href="https://tellmemore.life/favicon-48x48.png">
 <link rel="manifest" href="https://tellmemore.life/manifest.json">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#3455DB">
-<meta name="application-name" content="Tell-ME-More">
+<meta name="theme-color" content="">
+<meta name="application-name">
 <link rel="apple-touch-icon" sizes="57x57" href="https://tellmemore.life/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="https://tellmemore.life/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://tellmemore.life/apple-touch-icon-72x72.png">
@@ -202,9 +202,9 @@
 <link rel="apple-touch-icon" sizes="1024x1024" href="https://tellmemore.life/apple-touch-icon-1024x1024.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Tell-ME-More">
+<meta name="apple-mobile-web-app-title">
 <link rel="icon" type="image/png" sizes="228x228" href="https://tellmemore.life/coast-228x228.png">
-<meta name="msapplication-TileColor" content="#3455DB">
+<meta name="msapplication-TileColor" content="">
 <meta name="msapplication-TileImage" content="https://tellmemore.life/mstile-144x144.png">
 <meta name="msapplication-config" content="https://tellmemore.life/browserconfig.xml">
 
@@ -764,10 +764,10 @@ Over 1,320,000+ Readers
 
   
     
-      <li><a class="label-name" href="/category/jekyll">Jekyll  <span class="label-count">(15)</span>
+      <li><a class="label-name" href="/category/jekyll">Jekyll  <span class="label-count">(17)</span>
       </a></li>
     
-      <li><a class="label-name" href="/category/tutorial">Tutorial  <span class="label-count">(13)</span>
+      <li><a class="label-name" href="/category/tutorial">Tutorial  <span class="label-count">(15)</span>
       </a></li>
     
   
@@ -791,72 +791,9 @@ Over 1,320,000+ Readers
     
     
     <li>
-      <a class="label-name" href="/tags#conference">
-        conference
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class="label-name" href="/tags#js">
-        js
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class="label-name" href="/tags#learn">
-        learn
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class="label-name" href="/tags#productivity">
-        productivity
-        <span>(2)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class="label-name" href="/tags#programming">
-        programming
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class="label-name" href="/tags#software">
-        software
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class="label-name" href="/tags#workflow">
-        workflow
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
       <a class="label-name" href="/tags#featured">
         featured
-        <span>(4)</span>
+        <span>(5)</span>
       </a>
     </li>
   
@@ -869,19 +806,21 @@ Over 1,320,000+ Readers
       </a>
     </li>
   
+    
+    
+    <li>
+      <a class="label-name" href="/tags#summer">
+        summer
+        <span>(1)</span>
+      </a>
+    </li>
+  
 
 </ul>
 </div>
 </div>
 </div>
-<div class="sidebar widget-ready section" id="sidebar-ads" name="Sidebar ADS"><div class="widget HTML no-style" data-version="2" id="HTML10">
-<div class="widget-title">
-<h3 class="title">no-style</h3>
-</div>
-<div class="widget-content">
-<a class="ads-here ad-600" href="javascript:;">Responsive Advertisement</a>
-</div>
-</div></div>
+
 </aside>
   
 
@@ -1026,7 +965,13 @@ var LazyLoad=function(){"use strict";function t(){return(t=Object.assign||functi
 disconnect()}(t),function(t,n){n.forEach((function(n){t.observe(n),u(n,"observed")}))}(t,n)},G=function(t){var n;o&&!x(t._settings)&&(t._observer=new IntersectionObserver((function(n){n.forEach((function(n){return function(t){return t.isIntersecting||t.intersectionRatio>0}(n)?M(n.target,n,t):function(t,n,e){var o=e._settings;E(o.callback_exit,t,n,e),o.load_delay&&N(t)}(n.target,n,t)}))}),{root:(n=t._settings).container===document?null:n.container,rootMargin:n.thresholds||n.threshold+"px"}))},j=function(t){return Array.prototype.slice.call(t)},D=function(t){return t.container.querySelectorAll(t.elements_selector)},P=function(t){return!function(t){return null!==c(t,"ll-status")}(t)||function(t){return"observed"===c(t,"ll-status")}(t)},S=function(t){return function(t){return"error"===c(t,"ll-status")}(t)},U=function(t,n){return function(t){return j(t).filter(P)}(t||D(n))},V=function(t){var n,e=t._settings;(n=D(e),j(n).filter(S)).forEach((function(t){p(t,e.class_error),function(t){l(t,"ll-status",null)}(t)})),t.update()},$=function(t,e){var o;this._settings=i(t),this.loadingCount=0,G(this),o=this,n&&window.addEventListener("online",(function(t){V(o)})),this.update(e)};return $.prototype={update:function(t){var n=this._settings,a=U(t,n);this.toLoadCount=a.length,!e&&o?x(n)?T(a,n,this):F(this._observer,a):this.loadAll(a)},destroy:function(){this._observer&&this._observer.disconnect(),delete this._observer,delete this._settings,delete this.loadingCount,delete this.toLoadCount},loadAll:function(t){var n=this,e=this._settings;U(t,e).forEach((function(t){O(t,e,n)}))},load:function(t){O(t,this._settings,this)}},$.load=function(t,n){var e=i(n);O(t,e)},n&&function(t,n){if(n)if(n.length)for(var e,o=0;e=n[o];o+=1)s(t,e);else s(t,n)}($,window.lazyLoadOptions),$}();
  
  
+  window.addEventListener("pageshow", myFunction);
+
+function myFunction() {
+
 var lazyLoadInstance = new LazyLoad({ }); 
+
+}
 </script>
     
     
@@ -1035,6 +980,35 @@ var lazyLoadInstance = new LazyLoad({ });
  
  
 <script>
+/*!
+ * float-sidebar - Lightweight (2kb gzipped), zero-dependency vanilla javascript library for making float sidebars
+ * @version v1.2.0
+ * @link https://github.com/vursen/FloatSidebar.js
+ * @author Sergey Vinogradov
+ * @license The MIT License (MIT)
+ */
+
+!function(t,n){"object"==typeof exports&&"object"==typeof module?module.exports=n():"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?exports.FloatSidebar=n():t.FloatSidebar=n()}(window,function(){return function(t){var n={};function e(i){if(n[i])return n[i].exports;var o=n[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,e),o.l=!0,o.exports}return e.m=t,e.c=n,e.d=function(t,n,i){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:i})},e.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},e.p="",e(e.s=0)}([function(t,n,e){"use strict";e.r(n);var i,o="START";function r(t,n,e){return n in t?Object.defineProperty(t,n,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[n]=e,t}var s,u=(r(i={},o,[{to:"FINISH",when:function(t){return[!0===t.isSideInnerFitsPath,t.viewportTop+t.sideInnerHeight>=t.finishPoint]}},{to:"BOTTOM_FIXED",when:function(t){return[!0===t.isSideInnerFitsPath,!1===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsPath,!0===t.isSideInnerFitsViewport,t.viewportTop>=t.startPoint-t.topSpacing]}}]),r(i,"TOP_FIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:o,when:function(t){return[t.viewportTop<=t.startPoint-t.topSpacing]}},{to:"FINISH",when:function(t){return[t.sideInnerBottom>=t.finishPoint]}},{to:"UNFIXED",when:function(t){return["down"===t.scrollDirection,!1===t.isSideInnerFitsViewport]}}]),r(i,"UNFIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"TOP_FIXED",when:function(t){return[t.viewportTop<=t.sideInnerTop-t.topSpacing]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}},{to:"BOTTOM_FIXED",when:function(t){return[!1===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}}]),r(i,"BOTTOM_FIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"UNFIXED",when:function(t){return["up"===t.scrollDirection]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsViewport]}},{to:"FINISH",when:function(t){return[t.sideInnerBottom>=t.finishPoint]}}]),r(i,"FINISH",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"BOTTOM_FIXED",when:function(t){return[t.sideInnerBottom+t.bottomSpacing<=t.finishPoint,t.viewportBottom<=t.finishPoint]}},{to:"TOP_FIXED",when:function(t){return[t.viewportTop<=t.sideInnerTop-t.topSpacing]}}]),i);function a(t,n,e){return n in t?Object.defineProperty(t,n,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[n]=e,t}var p=(a(s={},o,function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top="0",e.style.bottom="auto"}),a(s,"TOP_FIXED",function(t,n){var e=n.$sideInner;e.style.position="fixed",e.style.top=t.topSpacing+"px",e.style.bottom="auto"}),a(s,"UNFIXED",function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top=t.sideInnerTop-t.startPoint+"px",e.style.bottom="auto"}),a(s,"BOTTOM_FIXED",function(t,n){var e=n.$sideInner;e.style.position="fixed",e.style.top="auto",e.style.bottom=t.bottomSpacing+"px"}),a(s,"FINISH",function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top="auto",e.style.bottom="0"}),s);var c=function(t){var n=t.actions,e=t.transitions,i=t.initialState;return{findTransitionFor:function(){for(var t=arguments.length,n=Array(t),o=0;o<t;o++)n[o]=arguments[o];return e[i].find(function(t){return t.when.apply(void 0,n).every(function(t){return t})})},performTransition:function(t){var e=t.to;return function(){i=e,n[e].apply(n,arguments)}}}};var f=function(t){var n=void 0;return function(){n||(n=requestAnimationFrame(function(){n=null,t()}))}},d=function(t){var n=t.clientHeight||t.innerHeight,e=t.scrollTop||t.pageYOffset;return{top:e,bottom:e+n,height:n}},l=function(t,n){var e=t.getBoundingClientRect();return{top:e.top+n,
+bottom:e.bottom+n,height:e.height}};var h=function(t,n){var e=n.$viewport,i=n.$relative,o=n.$sideInner,r=n.$sideOuter,s=n.topSpacing,u=n.bottomSpacing,a={},p=function(){var t=d(e),n=l(o,t.top),p=l(r,t.top),c=l(i,t.top),f=function(t){return a.viewportTop<t?"down":a.viewportTop>t?"up":"notChanged"}(t.top),h=p.top,I=c.bottom,v=I-h,w=n.height+s+u<t.height,m=n.height<v,g=Math.max(n.height,v);return{startPoint:h,finishPoint:I,topSpacing:s,bottomSpacing:u,scrollDirection:f,isSideInnerFitsPath:m,isSideInnerFitsViewport:w,sideOuterHeight:g,viewportTop:t.top,viewportBottom:t.bottom,sideInnerTop:n.top,sideInnerBottom:n.bottom,sideInnerHeight:n.height}},c=f(function(){var n=p();t(a,n),a=n});return{start:function(){e.addEventListener("scroll",c),e.addEventListener("resize",c),c()},stop:function(){e.removeEventListener("scroll",c),e.removeEventListener("resize",c)},tick:c}};n.default=function(t){var n=t.viewport||window,e=t.sidebar,i=t.sidebarInner||e.firstElementChild,r=t.relative,s=t.topSpacing||0,a=t.bottomSpacing||0,f=c({actions:p,transitions:u,initialState:o}),d=h(function(t,n){var o=f.findTransitionFor(n);o&&f.performTransition(o)(n,{$sideInner:i,$sideOuter:e,$relative:r}),l(t,n)},{$viewport:n,$sideOuter:e,$sideInner:i,$relative:r,topSpacing:s,bottomSpacing:a}),l=function(t,n){Math.abs((t.sideOuterHeight||0)-n.sideOuterHeight)>=1&&(e.style.height=n.sideOuterHeight+"px")};return requestAnimationFrame(function(){e.style.willChange="height",i.style.width="inherit",i.style.transform="translateZ(0)",i.style.willChange="transform",d.start()}),{forceUpdate:function(){d.tick()},destroy:function(){d.stop()}}}}]).default});
+
+
+
+var sidebar = document.querySelector('#sidebar-wrapper');
+
+var content = document.querySelector('#main-wrapper');
+
+var floatSidebar = FloatSidebar({
+
+    sidebar: sidebar,
+
+    relative: content
+
+});
+
+</script>
+
+<script>
+
 
 /*
 const MAX_RPS = 8,
@@ -1141,6 +1115,11 @@ var acbox = document.querySelectorAll(".mobile-menu ul li .submenu-toggle");
      
      });
  } 
+
+ 
+ 
+ 
+ 
 
 </script>
 
