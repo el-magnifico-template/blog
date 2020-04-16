@@ -15,6 +15,10 @@ const dependenciesUrls = [
 
 
 
+"img",
+
+
+
 "offline.html",
 
 

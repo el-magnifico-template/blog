@@ -7,31 +7,6 @@
     <atom:link href="https://tellmemore.life/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;&lt;img src="https://tellmemore.life/assets/images/demo1.jpg" alt="Welcome to Jekyll!" class="webfeedsFeaturedVisual"&gt;&lt;/p&gt;&lt;iframe src=&quot;/default.asp&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 04 Feb 2019 00:00:00 +0100</pubDate>
-        <lastmod>2020-04-05T23:31:35+01:00</lastmod>
-        <link>https://tellmemore.life//welcome-to-jekyll</link>
-        <guid isPermaLink="true">https://tellmemore.life/welcome-to-jekyll</guid>
-      </item>
-    
-      <item>
         <title>The first mass-produced book to deviate from a rectilinear format</title>
         <description>&lt;p&gt;&lt;img src="https://tellmemore.life/assets/images/17.jpg" alt="The first mass-produced book to deviate from a rectilinear format" class="webfeedsFeaturedVisual"&gt;&lt;/p&gt;&lt;p&gt;The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.&lt;/p&gt;
 
@@ -65,8 +40,10 @@
     
       <item>
         <title>Education must also train one for quick, resolute and effective thinking.</title>
-        <description>&lt;p&gt;&lt;img src="https://tellmemore.life/assets/images/3.jpg" alt="Education must also train one for quick, resolute and effective thinking." class="webfeedsFeaturedVisual"&gt;&lt;/p&gt;    &lt;iframe src=&quot;https://www.w3schools.com/default.asp&quot;&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/8.webp&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src="https://tellmemore.life/assets/images/3.jpg" alt="Education must also train one for quick, resolute and effective thinking." class="webfeedsFeaturedVisual"&gt;&lt;/p&gt;     &lt;p&gt;You are Jekyll  offline!&lt;/p&gt;
+     
+          &lt;p&gt;You are jekyll  offline!&lt;/p&gt;
+
 
 &lt;p&gt;There are lots of powerful things you can do with the Markdown editor&lt;/p&gt;
 
@@ -117,7 +94,7 @@
 
 </description>
         <pubDate>Fri, 01 Feb 2019 00:00:00 +0100</pubDate>
-        <lastmod>2020-04-10T23:30:45+01:00</lastmod>
+        <lastmod>2020-04-14T23:20:59+01:00</lastmod>
         <link>https://tellmemore.life//education</link>
         <guid isPermaLink="true">https://tellmemore.life/education</guid>
       </item>
@@ -252,6 +229,48 @@
         <lastmod>2020-03-02T06:42:46+01:00</lastmod>
         <link>https://tellmemore.life//options-for-creating-new-site-with-jekyll</link>
         <guid isPermaLink="true">https://tellmemore.life/options-for-creating-new-site-with-jekyll</guid>
+      </item>
+    
+      <item>
+        <title>Never stopped worrying or loving the bomb</title>
+        <description>&lt;p&gt;&lt;img src="https://tellmemore.life/assets/images/14.jpg" alt="Never stopped worrying or loving the bomb" class="webfeedsFeaturedVisual"&gt;&lt;/p&gt;&lt;p&gt;I’ve been through fire and water, I tell you! From my earliest pebblehood the wildest things you could imagine have been happening to this world of ours, and I have been right in the midst of them.&lt;/p&gt;
+
+&lt;p&gt;So begins Hallam Hawksworth’s The Strange Adventures of a Pebble. Written in the 1920s, the book was part of a series which also included The Adventures of a Grain of Dust and A Year in the Wonderland of Trees, all of which were supposed to introduce children to the world of Natural Sciences.&lt;/p&gt;
+
+&lt;p&gt;In each of them, Hawksworth personifies the natural object he is exploring, and using a mixture of folk tales, scientific facts and colloquial, friendly explanations guides the reader through the history of the natural world. It’s a real thrill of a ride, dramatizing the life cycle of supposedly dull things. The Adventures of a Grain of Dust begins even more loudly than Pebble:&lt;/p&gt;
+
+&lt;p&gt;I don’t want you to think that I’m boasting, but I do believe I’m one of the greatest travellers that ever was; and if anybody, living or dead, has ever gone through with more than I have I’d like to hear about it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Hallam Hawksworth was the pen-name of teacher Francis Blake Atkinson. He was married to the author Eleanor Stackhouse Atkinson, author of the children’s classic Greyfriars Bobby, which was based on the (supposedly) true story of a Scottish dog who spent fourteen years guarding his masters grave. The couple were both committed to education and published a weekly magazine for Chicago high school students called The Little Chronicle, as well as working for Encyclopaedia companies later in life.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I’ve been through fire and water, I tell you! From my earliest pebblehood the wildest things you could imagine have been happening to this world of ours, and I have been right in the midst of them.&lt;/p&gt;
+
+&lt;p&gt;So begins Hallam Hawksworth’s The Strange Adventures of a Pebble. Written in the 1920s, the book was part of a series which also included The Adventures of a Grain of Dust and A Year in the Wonderland of Trees, all of which were supposed to introduce children to the world of Natural Sciences.&lt;/p&gt;
+
+&lt;p&gt;In each of them, Hawksworth personifies the natural object he is exploring, and using a mixture of folk tales, scientific facts and colloquial, friendly explanations guides the reader through the history of the natural world. It’s a real thrill of a ride, dramatizing the life cycle of supposedly dull things. The Adventures of a Grain of Dust begins even more loudly than Pebble:&lt;/p&gt;
+
+&lt;h4 id=&quot;i-dont-want-you-to-think-that-im-boasting&quot;&gt;I don’t want you to think that I’m boasting&lt;/h4&gt;
+
+&lt;p&gt;Hallam Hawksworth was the pen-name of teacher Francis Blake Atkinson. He was married to the author Eleanor Stackhouse Atkinson, author of the children’s classic Greyfriars Bobby, which was based on the (supposedly) true story of a Scottish dog who spent fourteen years guarding his masters grave. The couple were both committed to education and published a weekly magazine for Chicago high school students called The Little Chronicle, as well as working for Encyclopaedia companies later in life.&lt;/p&gt;
+
+&lt;p&gt;I’ve been through fire and water, I tell you! From my earliest pebblehood the wildest things you could imagine have been happening to this world of ours, and I have been right in the midst of them.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;So begins Hallam Hawksworth’s The Strange Adventures of a Pebble. Written in the 1920s, the book was part of a series which also included The Adventures of a Grain of Dust and A Year in the Wonderland of Trees, all of which were supposed to introduce children to the world of Natural Sciences.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In each of them, Hawksworth personifies the natural object he is exploring, and using a mixture of folk tales, scientific facts and colloquial, friendly explanations guides the reader through the history of the natural world. It’s a real thrill of a ride, dramatizing the life cycle of supposedly dull things. The Adventures of a Grain of Dust begins even more loudly than Pebble:&lt;/p&gt;
+
+&lt;p&gt;I don’t want you to think that I’m boasting, but I do believe I’m one of the greatest travellers that ever was; and if anybody, living or dead, has ever gone through with more than I have I’d like to hear about it.&lt;/p&gt;
+
+&lt;p&gt;Hallam Hawksworth was the pen-name of teacher Francis Blake Atkinson. He was married to the author Eleanor Stackhouse Atkinson, author of the children’s classic Greyfriars Bobby, which was based on the (supposedly) true story of a Scottish dog who spent fourteen years guarding his masters grave. The couple were both committed to education and published a weekly magazine for Chicago high school students called The Little Chronicle, as well as working for Encyclopaedia companies later in life.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Jan 2019 00:00:00 +0100</pubDate>
+        <lastmod>2020-03-02T06:42:46+01:00</lastmod>
+        <link>https://tellmemore.life//never-stopped-worrying-never-loved-bomb</link>
+        <guid isPermaLink="true">https://tellmemore.life/never-stopped-worrying-never-loved-bomb</guid>
       </item>
     
   </channel>

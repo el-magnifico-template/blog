@@ -4,74 +4,9 @@ xmlns:content="http://purl.org/rss/1.0/modules/content/">
   	<title></title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
     <link>https://tellmemore.life/</link>
-    <lastBuildDate>2020-04-13T13:13:15+01:00</lastBuildDate>
+    <lastBuildDate>2020-04-16T13:42:48+01:00</lastBuildDate>
     <language>en-gb</language>
     
-    <item>
-      <title>Welcome to Jekyll!</title>
-      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
-
-      
-      <link>https://tellmemore.life/welcome-to-jekyll</link>
-      <guid isPermaLink="true">https://tellmemore.life/welcome-to-jekyll</guid>
-
-      <pubDate>2019-02-04T00:00:00+01:00</pubDate>
-      <author>Adhy Suryadi</author>
-      <content:encoded>
-        <![CDATA[
-        <!doctype html>
-	        <head>
-			  <meta charset="utf-8">
-			  <meta property="op:markup_version" content="v1.0">
-
-			  <!-- The URL of the web version of your article --> 
-			  <link rel="canonical" href="https://tellmemore.life/welcome-to-jekyll">
-			  
-			  <!-- The style to be used for this article --> 
-			  <meta property="fb:article_style" content="myarticlestyle">
-
-		  	<meta property="og:url"          content="https://tellmemore.life/welcome-to-jekyll" />
-			<meta property="og:type"         content="article" />
-			<meta property="og:title"        content="Welcome to Jekyll!" />
-			<meta property="og:description"  content="" />
-			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
-			<meta property="fb:app_id"       content="" />
-			</head>
-			<body>
-			  <article>
-			    <header>
-			      <!-- The cover image shown inside your article --> 
-			      <figure>
-			        <img src="https://tellmemore.life/images/cardboard.jpg" />
-			        <figcaption>A kanban board</figcaption>
-			      </figure>
-			      
-			      <!-- The title and subtitle shown in your article -->
-			      <h1> post.title </h1>
-
-			      <!-- A kicker for your article -->
-			      <h3 class="op-kicker">
-			        <iframe src="/default.asp"></iframe>
-
-
-			      </h3>
-
-			      <!-- The author of your article -->
-			      <address>
-			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
-			      </address>
-
-			      <!-- The published and last modified time stamps -->
-			      <time class="op-published" dateTime="2019-02-04T00:00:00+01:00">February 04, 2019</time>
-			      <time class="op-modified" dateTime="2019-02-04T00:00:00+01:00">February 04, 2019</time>
-			    </header>
-			  </article>
-            </body>
-        </html
-        ]]>
-      </content:encoded>
-    </item>
-     
     <item>
       <title>The first mass-produced book to deviate from a rectilinear format</title>
       <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
@@ -181,8 +116,9 @@ xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
 			      <!-- A kicker for your article -->
 			      <h3 class="op-kicker">
-			            <iframe src="https://www.w3schools.com/default.asp"></iframe>
-<p><img src="/assets/images/8.webp" alt=""></p>
+			             <p>You are Jekyll  offline!</p>
+     
+          <p>You are jekyll  offline!</p>
 
 
 			      </h3>
@@ -650,6 +586,71 @@ xmlns:content="http://purl.org/rss/1.0/modules/content/">
 			      <!-- The published and last modified time stamps -->
 			      <time class="op-published" dateTime="2019-01-23T00:00:00+01:00">January 23, 2019</time>
 			      <time class="op-modified" dateTime="2019-01-23T00:00:00+01:00">January 23, 2019</time>
+			    </header>
+			  </article>
+            </body>
+        </html
+        ]]>
+      </content:encoded>
+    </item>
+     
+    <item>
+      <title>Never stopped worrying or loving the bomb</title>
+      <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+
+      
+      <link>https://tellmemore.life/never-stopped-worrying-never-loved-bomb</link>
+      <guid isPermaLink="true">https://tellmemore.life/never-stopped-worrying-never-loved-bomb</guid>
+
+      <pubDate>2019-01-22T00:00:00+01:00</pubDate>
+      <author>Adhy Suryadi</author>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+	        <head>
+			  <meta charset="utf-8">
+			  <meta property="op:markup_version" content="v1.0">
+
+			  <!-- The URL of the web version of your article --> 
+			  <link rel="canonical" href="https://tellmemore.life/never-stopped-worrying-never-loved-bomb">
+			  
+			  <!-- The style to be used for this article --> 
+			  <meta property="fb:article_style" content="myarticlestyle">
+
+		  	<meta property="og:url"          content="https://tellmemore.life/never-stopped-worrying-never-loved-bomb" />
+			<meta property="og:type"         content="article" />
+			<meta property="og:title"        content="Never stopped worrying or loving the bomb" />
+			<meta property="og:description"  content="" />
+			<meta property="og:image"        content="https://tellmemore.life/images/cardboard.jpg" />
+			<meta property="fb:app_id"       content="" />
+			</head>
+			<body>
+			  <article>
+			    <header>
+			      <!-- The cover image shown inside your article --> 
+			      <figure>
+			        <img src="https://tellmemore.life/images/cardboard.jpg" />
+			        <figcaption>A kanban board</figcaption>
+			      </figure>
+			      
+			      <!-- The title and subtitle shown in your article -->
+			      <h1> post.title </h1>
+
+			      <!-- A kicker for your article -->
+			      <h3 class="op-kicker">
+			        <p>I’ve been through fire and water, I tell you! From my earliest pebblehood the wildest things you could imagine have been happening to this world of ours, and I have been right in the midst of them.</p>
+
+
+			      </h3>
+
+			      <!-- The author of your article -->
+			      <address>
+			        <a rel="facebook" href="http://facebook.com/pauldambra">Paul D'Ambra</a>
+			      </address>
+
+			      <!-- The published and last modified time stamps -->
+			      <time class="op-published" dateTime="2019-01-22T00:00:00+01:00">January 22, 2019</time>
+			      <time class="op-modified" dateTime="2019-01-22T00:00:00+01:00">January 22, 2019</time>
 			    </header>
 			  </article>
             </body>
