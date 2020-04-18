@@ -296,3443 +296,6 @@ ul,ul li{list-style:none}#content-wrapper,#main-wrapper,#outer-wrapper,#sidebar-
 
 
 
-    <script>
-
-/*! loadCSS. [c]2017 Filament Group, Inc. MIT License 
-!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this); 
-
-loadCSS("/assets/css/main.css");
-
-*/
-
-
-
-var LazyLoad=function(){"use strict";function t(){return(t=Object.assign||function(t){for(var n=1;n<arguments.length;n++){var e=arguments[n];for(var o in e)Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o])}return t}).apply(this,arguments)}var n="undefined"!=typeof window,e=n&&!("onscroll"in window)||"undefined"!=typeof navigator&&/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),o=n&&"IntersectionObserver"in window,a=n&&"classList"in document.createElement("p"),r={elements_selector:"img",container:e||n?document:null,threshold:300,thresholds:null,data_src:"src",data_srcset:"srcset",data_sizes:"sizes",data_bg:"bg",data_poster:"poster",class_loading:"loading",class_loaded:"loaded",class_error:"error",load_delay:0,auto_unobserve:!0,callback_enter:null,callback_exit:null,callback_loading:null,callback_loaded:null,callback_error:null,callback_finish:null,use_native:!1},i=function(n){return t({},r,n)},s=function(t,n){var e,o=new t(n);try{e=new CustomEvent("LazyLoad::Initialized",{detail:{instance:o}})}catch(t){(e=document.createEvent("CustomEvent")).initCustomEvent("LazyLoad::Initialized",!1,!1,{instance:o})}window.dispatchEvent(e)},c=function(t,n){return t.getAttribute("data-"+n)},l=function(t,n,e){var o="data-"+n;null!==e?t.setAttribute(o,e):t.removeAttribute(o)},u=function(t,n){return l(t,"ll-status",n)},d=function(t,n){return l(t,"ll-timeout",n)},f=function(t){return c(t,"ll-timeout")},_=function(t){for(var n,e=[],o=0;n=t.children[o];o+=1)"SOURCE"===n.tagName&&e.push(n);return e},v=function(t,n,e){e&&t.setAttribute(n,e)},g=function(t,n){v(t,"sizes",c(t,n.data_sizes)),v(t,"srcset",c(t,n.data_srcset)),v(t,"src",c(t,n.data_src))},h={IMG:function(t,n){var e=t.parentNode;e&&"PICTURE"===e.tagName&&_(e).forEach((function(t){g(t,n)}));g(t,n)},IFRAME:function(t,n){v(t,"src",c(t,n.data_src))},VIDEO:function(t,n){_(t).forEach((function(t){v(t,"src",c(t,n.data_src))})),v(t,"poster",c(t,n.data_poster)),v(t,"src",c(t,n.data_src)),t.load()}},b=function(t,n,e){var o=t.tagName,a=h[o];a?(a(t,n),function(t){t&&(t.loadingCount+=1)}(e)):function(t,n){var e=c(t,n.data_src),o=c(t,n.data_bg);e&&(t.style.backgroundImage='url("'.concat(e,'")')),o&&(t.style.backgroundImage=o)}(t,n)},m=function(t,n){a?t.classList.add(n):t.className+=(t.className?" ":"")+n},p=function(t,n){a?t.classList.remove(n):t.className=t.className.replace(new RegExp("(^|\\s+)"+n+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,"")},E=function(t,n,e,o){t&&(void 0===o?void 0===e?t(n):t(n,e):t(n,e,o))},y=function(t,n){n&&(n.loadingCount-=1,L(t,n))},L=function(t,n){n.toLoadCount||n.loadingCount||E(t.callback_finish,n)},w=function(t,n,e){t.addEventListener(n,e)},I=function(t,n,e){t.removeEventListener(n,e)},k=function(t,n,e){I(t,"load",n),I(t,"loadeddata",n),I(t,"error",e)},C=function(t,n,e){var o=function o(r){!function(t,n,e){var o=t.target;u(o,"loaded"),p(o,n.class_loading),m(o,n.class_loaded),E(n.callback_loaded,o,e),y(n,e)}(r,n,e),k(t,o,a)},a=function a(r){!function(t,n,e){var o=t.target;u(o,"error"),p(o,n.class_loading),m(o,n.class_error),E(n.callback_error,o,e),y(n,e)}(r,n,e),k(t,o,a)};!function(t,n,e){w(t,"load",n),w(t,"loadeddata",n),w(t,"error",e)}(t,o,a)},A=["IMG","IFRAME","VIDEO"],z=function(t,n,e){(function(t){return A.indexOf(t.tagName)>-1})(t)&&(C(t,n,e),m(t,n.class_loading)),b(t,n,e),function(t,n){n&&(n.toLoadCount-=1,L(t,n))}(n,e)},O=function(t,n,e){z(t,n,e),u(t,"loading"),E(n.callback_loading,t,e),E(n.callback_reveal,t,e),function(t,n){if(n){var e=n._observer;e&&n._settings.auto_unobserve&&e.unobserve(t)}}(t,e)},N=function(t){var n=f(t);n&&(clearTimeout(n),d(t,null))},M=function(t,n,e){var o=e._settings;E(o.callback_enter,t,n,e),o.load_delay?function(t,n,e){var o=n.load_delay,a=f(t);a||(a=setTimeout((function(){O(t,n,e),N(t)}),o),d(t,a))}(t,o,e):O(t,o,e)},R=["IMG","IFRAME"],x=function(t){return t.use_native&&"loading"in HTMLImageElement.prototype},T=function(t,n,e){t.forEach((function(t){-1!==R.indexOf(t.tagName)&&(t.setAttribute("loading","lazy"),function(t,n,e){z(t,n,e),u(t,"native")}(t,n,e))})),e.toLoadCount=0},F=function(t,n){!function(t){t.
-disconnect()}(t),function(t,n){n.forEach((function(n){t.observe(n),u(n,"observed")}))}(t,n)},G=function(t){var n;o&&!x(t._settings)&&(t._observer=new IntersectionObserver((function(n){n.forEach((function(n){return function(t){return t.isIntersecting||t.intersectionRatio>0}(n)?M(n.target,n,t):function(t,n,e){var o=e._settings;E(o.callback_exit,t,n,e),o.load_delay&&N(t)}(n.target,n,t)}))}),{root:(n=t._settings).container===document?null:n.container,rootMargin:n.thresholds||n.threshold+"px"}))},j=function(t){return Array.prototype.slice.call(t)},D=function(t){return t.container.querySelectorAll(t.elements_selector)},P=function(t){return!function(t){return null!==c(t,"ll-status")}(t)||function(t){return"observed"===c(t,"ll-status")}(t)},S=function(t){return function(t){return"error"===c(t,"ll-status")}(t)},U=function(t,n){return function(t){return j(t).filter(P)}(t||D(n))},V=function(t){var n,e=t._settings;(n=D(e),j(n).filter(S)).forEach((function(t){p(t,e.class_error),function(t){l(t,"ll-status",null)}(t)})),t.update()},$=function(t,e){var o;this._settings=i(t),this.loadingCount=0,G(this),o=this,n&&window.addEventListener("online",(function(t){V(o)})),this.update(e)};return $.prototype={update:function(t){var n=this._settings,a=U(t,n);this.toLoadCount=a.length,!e&&o?x(n)?T(a,n,this):F(this._observer,a):this.loadAll(a)},destroy:function(){this._observer&&this._observer.disconnect(),delete this._observer,delete this._settings,delete this.loadingCount,delete this.toLoadCount},loadAll:function(t){var n=this,e=this._settings;U(t,e).forEach((function(t){O(t,e,n)}))},load:function(t){O(t,this._settings,this)}},$.load=function(t,n){var e=i(n);O(t,e)},n&&function(t,n){if(n)if(n.length)for(var e,o=0;e=n[o];o+=1)s(t,e);else s(t,n)}($,window.lazyLoadOptions),$}();
- 
-
-
-function loadScript(src, callback) {
-  var s,
-    r,
-    t;
-  r = false;
-  s = document.createElement('script');
-  s.type = 'text/javascript';
-  s.src = src;
-  s.onload = s.onreadystatechange = function() {
-    //console.log( this.readyState ); //uncomment this line to see which ready states are called.
-    if (!r && (!this.readyState || this.readyState == 'complete')) {
-      r = true;
-      callback();
-    }
-  };
-  t = document.getElementsByTagName('script')[0];
-  t.parent.insertBefore(s, t);
-}
-
-
-    </script>
-    
-
- 		
-
- 		
-
-</head>
-
-
-
-     
-<body class="index home">
-<nav class="skip-links">
-  <h2 class="screen-reader-text">Skip links</h2>
-  <ul>
-    <li><a href="#header-wrapper" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main-wrapper" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer-wrapper" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-   
-
-
-<div id="outer-wrapper">
-
-
-    <header id="header-wrapper">
-<!-- Headerify -->
-<div class="headerify-wrap">
-<div class="headerify">
-<div class="container row-x1">
-<a aria-label="mobile menu" class="show-mobile-menu" href="javascript:;"></a>
-<div class="main-logo-wrap">
-<div class="main-logo section" id="main-logo"><div class="widget Header" data-version="2" id="Header1">
-<div class="header-widget">
-<h1 class="blog-title">
-<a href="/">
-Tell ME More
-</a>
-</h1>
-</div>
-</div></div>
-</div>
-<nav class="main-menu-wrap">
-<div class="magify-main-menu " id="magify-main-menu">
-<div class="widget LinkList show-menu">
-  <ul id="magify-main-menu-nav">
-
-	    
-       
-        <li>
-          <a href="https://tellmemore.life/">Home</a>
-        </li>
-      
-    
-       
-        <li>
-          <a href="https://tellmemore.life/news/">News</a>
-        </li>
-      
-    
-      
-        <li class="has-sub">
-          <a href="https://tellmemore.life">Snippets   </a>
-          <ul class="sub-menu m-sub">
-          
-            <li><a href="https://tellmemore.life#">Example1</a></li>
-          
-            <li><a href="https://tellmemore.life#">Example2</a></li>
-          
-          </ul>
-          <div class="submenu-toggle"></div>
-        </li>
-      
-    
-
-  </ul> 
-
-
-</div>
-</div>
-</nav>
-<a aria-label="search" class="search-toggle" href="javascript:;"></a>
-<div id="nav-search">
-<form action="https://www.google.com/search" class="search-form" method="get" name="search-form" target="_blank">
-<input name="sitesearch" type="hidden" value="el-magnifico-template.blogspot.com">
-<input autocomplete="on" class="search-input" name="q" placeholder="Rechercher" required="required" type="text">
-<button class="search-action" type="submit">OK</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</header>
-  
-    
-    
-
-    	    	    <!-- Featured Wrapper -->
-
-
-<div id="featured-wrapper">
-<div class="featured container row-x1 section" id="featured" name="Featured Posts"><div class="widget HTML id-featured-recent show-ify">
-<div class="widget-title">
-<h3 class="title">Featured Posts</h3>
-</div>
-<div class="widget-content"><div class="featured-posts">
-
-
-
-
-
-    
-    
-    
-    
-    
-    <article class="featured-item post item-0"><div class="featured-item-inner">
-<a class="entry-image-link before-mask" href="/customer-service">
-    
-      <img title="What is Jekyll" alt="What is Jekyll" class="entry-thumb" data-src="/assets/images/11"> 
-
-       
-    
-    
-    </a><span class="entry-category">Jekyll
-
- 
-      
-    
-    
-    
-  
-  
-  
-    
-        </span><div class="entry-header entry-info">
-<h2 class="entry-title"><a href="/customer-service">What is Jekyll</a></h2>
-    
-    
-        <div class="entry-meta">
-<span class="entry-author"></span><span class="entry-time"><time class="published"> January 18, 2019</time></span>
-</div>
-
-    
-    </div>
-</div></article>
-    
-    
-    
- 
-
-    
-
-    
-    
-    
-    
-    
-    <article class="featured-item post item-1"><div class="featured-item-inner">
-<a class="entry-image-link before-mask" href="/we-all-wait-for-summer">
-    
-      <img title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="/assets/images/1"> 
-
-       
-    
-    
-    </a><span class="entry-category">Jekyll
-
- 
-      
-    
-    
-    
-  
-  
-  
-    
-        </span><div class="entry-header entry-info">
-<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
-    
-    
-        <div class="entry-meta">
-<span class="entry-author"></span><span class="entry-time"><time class="published"> January 28, 2019</time></span>
-</div>
-
-    
-    </div>
-</div></article>
-    
-    
-    
- 
-
-    
-
-    
-    
-    
-    
-    
-    <article class="featured-item post item-2"><div class="featured-item-inner">
-<a class="entry-image-link before-mask" href="/tree-of-codes">
-    
-      <img title="Tree of Codes" alt="Tree of Codes" class="entry-thumb" data-src="/assets/images/2"> 
-
-       
-    
-    
-    </a><span class="entry-category">Jekyll
-
- 
-      
-    
-    
-    
-  
-  
-  
-    
-        </span><div class="entry-header entry-info">
-<h2 class="entry-title"><a href="/tree-of-codes">Tree of Codes</a></h2>
-    
-    
-        <div class="entry-meta">
-<span class="entry-author"></span><span class="entry-time"><time class="published"> January 27, 2019</time></span>
-</div>
-
-    
-    </div>
-</div></article>
-    
-    
-    
- 
-
-    
-
-    
-    
-    
-    
-    
-    <article class="featured-item post item-3"><div class="featured-item-inner">
-<a class="entry-image-link before-mask" href="/first-mass-produced">
-    
-      <img title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="/assets/images/17"> 
-
-       
-    
-    
-    </a><span class="entry-category">tutorial
-
- 
-      
-    
-    
-    
-  
-  
-  
-    
-        </span><div class="entry-header entry-info">
-<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
-    
-    
-        <div class="entry-meta">
-<span class="entry-author"></span><span class="entry-time"><time class="published"> February 2, 2019</time></span>
-</div>
-
-    
-    </div>
-</div></article>
-    
-    
-    
- 
-
-    
-
-
-
-
-
-
-</div></div>
-</div></div>
-</div>
-  
-
-
-<!-- Content Wrapper -->
-<div id="content-wrapper">
-<div class="container row-x1">
-
-
-
-
-
-
-<!-- Main Wrapper -->
-<main id="main-wrapper">
-	  
-
-<div class="block-posts section" id="block-posts-1" name="Post Widgets 1">
-
-
- 
- <div class="widget HTML      show-ify">
-<div class="widget-title title-wrap">
-<h3 class="title">Tutorial</h3>
-<a class="more" href="/category/tutorial">Show more</a>
-</div>
-<div class="widget-content"><div class="              block-posts-1">
-
-
-
-
-
-
-
-      
-
-
-      
-     
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-                
-                
-                
-                
-
-          <article class="block-item item-0"><div class="block-inner">
-<span class="entry-category">Learn</span><a class="entry-image-link before-mask" href="/first-mass-produced">                
-
-          
-            <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
-
-          
-          </a>
-</div>
-<div class="entry-header entry-info">
-          
-          <h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
-          
-                    <div class="entry-meta">
-<span class="entry-author">Templateify</span><span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span>
-</div>
-          </div></article>
-            
-            
-
-            
-
-                
-
-          
-          
-   
-          
-      
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-                
-                
-                
-                
-                                <article class="block-item item-1"><a class="entry-image-link" href="/education">                
-
-                                  <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
-
-                                </a><div class="entry-header">
-<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-                
-
-          
-          
-   
-          
-      
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-                
-                
-                
-                
-                                <article class="block-item item-2"><a class="entry-image-link" href="/acumulated-experience">                
-
-                                  <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
-
-                                </a><div class="entry-header">
-<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-                
-
-          
-          
-   
-          
-      
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-                
-                
-                
-                
-                                <article class="block-item item-3"><a class="entry-image-link" href="/we-all-wait-for-summer">                
-
-                                  <img width="100%" title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="assets/images/1"> 
-
-                                </a><div class="entry-header">
-<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-                
-
-          
-          
-   
-          
-      
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-                
-                
-                
-                
-                                <article class="block-item item-4"><a class="entry-image-link" href="/tree-of-codes">                
-
-                                  <img width="100%" title="Tree of Codes" alt="Tree of Codes" class="entry-thumb" data-src="assets/images/2"> 
-
-                                </a><div class="entry-header">
-<h2 class="entry-title"><a href="/tree-of-codes">Tree of Codes</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-27T00:00:00+01:00">January 27, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-                
-
-          
-          
-   
-          
-      
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-       
-
- 
-
-
-
-
-
-
-</div></div>
-</div>
-
-
- 
-
-
-
-
-
-
-  
-
-
-
-
-
-
- <div class="widget HTML      show-ify">
-<div class="widget-title title-wrap">
-<h3 class="title">Tutorial</h3>
-<a class="more" href="/category/tutorial">Show more</a>
-</div>
-<div class="widget-content"><div class="              grid-posts-1">
-
-
-
-
-
-
-
-      
-
-
-      
-     
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/first-mass-produced">                
-
-          
-            <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/education">                
-
-          
-            <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/acumulated-experience">                
-
-          
-            <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-       
-
- 
-
-
-
-
-
-
-</div></div>
-</div>
-
-
- 
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
- 
-</div>
-
-
-
-<div class="home-ad section" id="home-ads-1" name="Home ADS 1">
-<div class="widget HTML">
-<div class="widget-content">
-<a class="ads-here" href="javascript:;">Responsive Advertisement</a>
-</div>
-</div>
-</div>
-<div class="main section" id="main" name="Main Posts"><div class="widget Blog" data-version="2" id="Blog1">
-<div class="blog-posts-title title-wrap">
-<h3 class="title">Latest Posts</h3>
-
- 
-</div>
-
-
-<div id="blogContainer" class="blog-posts hfeed container index-post-wrap" data-page="1" data-totalpages="2">
-
-
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/first-mass-produced">
-<img class="entry-thumb" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" data-src="/assets/images/17">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">sal</span>
-<span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/education">
-<img class="entry-thumb" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." data-src="/assets/images/3">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/education">Education must also train one for quick, resolute and effective thinking.</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">Adhy Suryadi</span>
-<span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">You are Jekyll offline! You are jekyll offline! There are lots of powerful things you can do with the Markdown...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/acumulated-experience">
-<img class="entry-thumb" title="Accumulated experience of social living" alt="Accumulated experience of social living" data-src="/assets/images/15">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/acumulated-experience">Accumulated experience of social living</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">sal</span>
-<span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/about-bundler">
-<img class="entry-thumb" title="About Bundler" alt="About Bundler" data-src="/assets/images/2">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/about-bundler">About Bundler</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">sal</span>
-<span class="entry-time"><time class="published" datetime="2019-01-29T00:00:00+01:00">January 29, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">gem install bundler installs the bundler gem through RubyGems. You only need to install it once - not every time...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/we-all-wait-for-summer">
-<img class="entry-thumb" title="We all wait for summer" alt="We all wait for summer" data-src="/assets/images/1">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/we-all-wait-for-summer">We all wait for summer</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">jane</span>
-<span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">This is changed. As I engage in the so-called “bull sessions” around and about the school, I too often find...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/tree-of-codes">
-<img class="entry-thumb" title="Tree of Codes" alt="Tree of Codes" data-src="/assets/images/2">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/tree-of-codes">Tree of Codes</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">sal</span>
-<span class="entry-time"><time class="published" datetime="2019-01-27T00:00:00+01:00">January 27, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/red-riding">
-<img class="entry-thumb" title="Red Riding Hood" alt="Red Riding Hood" data-src="/assets/images/3">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/red-riding">Red Riding Hood</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">sal</span>
-<span class="entry-time"><time class="published" datetime="2019-01-26T00:00:00+01:00">January 26, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/press-and-education">
-<img class="entry-thumb" title="Press and education" alt="Press and education" data-src="/assets/images/7">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/press-and-education">Press and education</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">sal</span>
-<span class="entry-time"><time class="published" datetime="2019-01-25T00:00:00+01:00">January 25, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">Even the press, the classroom, the platform, and the pulpit in many instances do not give us objective and unbiased...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/options-for-creating-new-site-with-jekyll">
-<img class="entry-thumb" title="Options for creating a new site with Jekyll" alt="Options for creating a new site with Jekyll" data-src="/assets/images/13">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/options-for-creating-new-site-with-jekyll">Options for creating a new site with Jekyll</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">jane</span>
-<span class="entry-time"><time class="published" datetime="2019-01-23T00:00:00+01:00">January 23, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">jekyll new &lt;PATH&gt; installs a new Jekyll site at the path specified (relative to current directory). In this case, Jekyll...</p>
-</div>
-</article>
-
-
-
-
-<article class="blog-post hentry index-post post-0">
-
-<div class="entry-image">
-<span class="entry-category">Business</span>
-<a class="entry-image-link" href="/never-stopped-worrying-never-loved-bomb">
-<img class="entry-thumb" title="Never stopped worrying or loving the bomb" alt="Never stopped worrying or loving the bomb" data-src="/assets/images/14">
-</a>
-</div>
-<div class="entry-header">
-<h2 class="entry-title">
-<a class="entry-title-link" href="/never-stopped-worrying-never-loved-bomb">Never stopped worrying or loving the bomb</a>
-</h2>
-<div class="entry-meta">
-<span class="entry-author">sal</span>
-<span class="entry-time"><time class="published" datetime="2019-01-22T00:00:00+01:00">January 22, 2019</time></span>
-</div>
-<p class="entry-excerpt excerpt">I’ve been through fire and water, I tell you! From my earliest pebblehood the wildest things you could imagine have...</p>
-</div>
-</article>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-<div class="blog-pager container" id="blog-pager">
-
-
-<a class="blog-pager-older-link load-more" id="load-more-link">
-Load More
-</a>
-
-
-<span id="loading" class="loading"><span class="loader"></span></span>
-<span class="no-more load-more">
-That is All
-</span>
-</div>
-
-
-<script>
-
-  var blogContainer = document.getElementById("blogContainer"),loading = document.getElementById("loading");
-
-document.getElementById("load-more-link").addEventListener("click",loadMorePosts);
-
-
-function loadMorePosts() {
-loading.style.display = 'block';
-
-  var _this = this;
-  var nextPage = parseInt(blogContainer.getAttribute("data-page")) + 1;
-  var totalPages = parseInt(blogContainer.getAttribute("data-totalPages"));
-  
-  
-var request = new XMLHttpRequest();
-request.open('GET', "/page" + nextPage, true);
-
-request.onload = function() {
-  if (this.status >= 200 && this.status < 400) {
-var div = document.createElement("div");
-div.innerHTML = this.response;
-
-var elements = div.querySelectorAll(".blog-post");
-console.log(elements);
-
-Array.prototype.forEach.call(elements, function(el, i){
-blogContainer.setAttribute('data-page', nextPage)
-blogContainer.appendChild(el);
-
-
-
-    
-
-});
-
-    if (blogContainer.getAttribute("data-totalPages") == nextPage) {
-      let loadMore = document.getElementById("load-more-link");
-      loadMore.style.display = 'none';
-
-    }
- 
-lazyLoadInstance.update();
-
-  } 
-};
-
-request.send();
-}
-
-
-
-</script>
-
-
-            
-</div></div>
-<div id="custom-ads">
-</div>
-<div class="home-ad section" id="home-ads-2" name="Home ADS 2"><div class="widget HTML" data-version="2" id="HTML8">
-<div class="widget-content">
-<a class="ads-here" href="javascript:;">Responsive Advertisement</a>
-</div>
-</div></div>
-
-	  
-
-<div class="block-posts section" id="block-posts-2" name="Post Widgets 2">
-
- <div class="widget HTML      show-ify">
-<div class="widget-title title-wrap">
-<h3 class="title">Tutorial</h3>
-<a class="more" href="/category/tutorial">Show more</a>
-</div>
-<div class="widget-content"><div class="              block-videos">
-
-
-
-
-
-
-
-      
-
-
-      
-     
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-                  
-                
-                  
-
-          <article class="videos-item "><div class="entry-image"><a class="entry-image-link" href="/first-mass-produced">                
-
-          
-            <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
-
-          <span class="video-icon"></span></a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span></div>
-</div></article>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-                  
-                
-                  
-
-          <article class="videos-item "><div class="entry-image"><a class="entry-image-link" href="/education">                
-
-          
-            <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
-
-          <span class="video-icon"></span></a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
-</div></article>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-                  
-                
-                  
-
-          <article class="videos-item "><div class="entry-image"><a class="entry-image-link" href="/acumulated-experience">                
-
-          
-            <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
-
-          <span class="video-icon"></span></a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
-</div></article>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-       
-
- 
-
-
-
-
-
-
-</div></div>
-</div>
-
-
- 
-
-
-
-
-
-
-  
-
-
-<div class="widget HTML    column-left block-column       show-ify">
-<div class="widget-title title-wrap">
-<h3 class="title">Tutorial</h3>
-<a class="more" href="/category/tutorial">Show more</a>
-</div>
-<div class="widget-content"><div class="             column-posts            ">
-
-
-
-
-
-
-
-      
-
-
-      
-     
-    
-      
-      
-
-      
-      
-      
-      
-             
-                
-                
-                
-                
-
-
-                
-
-                
-              <article class="column-item item-5"><div class="column-inner">' + thisM + '<a class="entry-image-link before-mask" href="/first-mass-produced">
-                              
-  <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
-
-              
-              </a><div class="entry-header entry-info">
-<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
-<span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span>
-</div>
-</div></article>  
-                
-   
-            
-
-            
-
-           
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-                
-                
-                
-                
-            
-                                <article class="column-item item-6"><a class="entry-image-link" href="/education">                
-
-  
-  
-  
-  <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
-
-  </a><div class="entry-header">
-<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-           
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-                
-                
-                
-                
-            
-                                <article class="column-item item-7"><a class="entry-image-link" href="/acumulated-experience">                
-
-  
-  
-  
-  <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
-
-  </a><div class="entry-header">
-<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-           
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-                
-                
-                
-                
-            
-                                <article class="column-item item-8"><a class="entry-image-link" href="/we-all-wait-for-summer">                
-
-  
-  
-  
-  <img width="100%" title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="assets/images/1"> 
-
-  </a><div class="entry-header">
-<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-           
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-       
-
- 
-
-
-
-
-
-
-</div></div>
-</div>
-
-
- 
-
-
-
-
-
-
-  
-
-<div class="widget HTML       column-right block-column    show-ify">
-<div class="widget-title title-wrap">
-<h3 class="title">Tutorial</h3>
-<a class="more" href="/category/tutorial">Show more</a>
-</div>
-<div class="widget-content"><div class="             column-posts            ">
-
-
-
-
-
-
-
-      
-
-
-      
-     
-    
-      
-      
-
-      
-      
-      
-      
-             
-                
-                
-                
-                
-
-
-                
-
-                
-              <article class="column-item item-9"><div class="column-inner">' + thisM + '<a class="entry-image-link before-mask" href="/first-mass-produced">
-                              
-  <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
-
-              
-              </a><div class="entry-header entry-info">
-<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
-<span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span>
-</div>
-</div></article>  
-                
-   
-            
-
-            
-
-           
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-                
-                
-                
-                
-            
-                                <article class="column-item item-10"><a class="entry-image-link" href="/education">                
-
-  
-  
-  
-  <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
-
-  </a><div class="entry-header">
-<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-           
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-                
-                
-                
-                
-            
-                                <article class="column-item item-11"><a class="entry-image-link" href="/acumulated-experience">                
-
-  
-  
-  
-  <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
-
-  </a><div class="entry-header">
-<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-           
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-                
-                
-                
-                
-            
-                                <article class="column-item item-12"><a class="entry-image-link" href="/we-all-wait-for-summer">                
-
-  
-  
-  
-  <img width="100%" title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="assets/images/1"> 
-
-  </a><div class="entry-header">
-<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span></div>
-</div></article>
-
-            
-  
-
-           
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-       
-
- 
-
-
-
-
-
-
-</div></div>
-</div>
-
-
- 
-
-
-
-
-
-
-  
-
-
-
- <div class="widget HTML      show-ify">
-<div class="widget-title title-wrap">
-<h3 class="title">Jekyll</h3>
-<a class="more" href="/category/Jekyll">Show more</a>
-</div>
-<div class="widget-content"><div class="              grid-posts-1">
-
-
-
-
-
-
-
-      
-     
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/education">                
-
-          
-            <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/acumulated-experience">                
-
-          
-            <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/about-bundler">                
-
-          
-            <img width="100%" title="About Bundler" alt="About Bundler" class="entry-thumb" data-src="assets/images/2"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/about-bundler">About Bundler</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-29T00:00:00+01:00">January 29, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/we-all-wait-for-summer">                
-
-          
-            <img width="100%" title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="assets/images/1"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/tree-of-codes">                
-
-          
-            <img width="100%" title="Tree of Codes" alt="Tree of Codes" class="entry-thumb" data-src="assets/images/2"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/tree-of-codes">Tree of Codes</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-27T00:00:00+01:00">January 27, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-      
-      
-
-      
-      
-      
-      
-             
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-                
-
-      
-      
-      
-      
-      
-      
-            
-            
-            
-            
-          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/red-riding">                
-
-          
-            <img width="100%" title="Red Riding Hood" alt="Red Riding Hood" class="entry-thumb" data-src="assets/images/3"> 
-
-          </a></div>
-<div class="entry-header">
-<h2 class="entry-title"><a href="/red-riding">Red Riding Hood</a></h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-26T00:00:00+01:00">January 26, 2019</time></span></div>
-</div></article>
-      
-
-      
-                  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-       
-
-
-      
-
- 
-
-
-
-
-
-
-</div></div>
-</div>
-
-
- 
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-</main>
-
-    <!-- Sidebar Wrapper -->
-<aside class="sidebar-ads-active" id="sidebar-wrapper">
- 
-<div class="sidebar widget-ready section" id="sidebar" name="Main Sidebar">
-<div class="widget PopularPosts" data-version="2" id="PopularPosts1">
-<div class="widget-title">
-<h3 class="title">Most Popular</h3>
-</div>
-<div class="widget-content">
-
-
-<article class="popular-post post item-0">
-<a class="entry-image-link" href="link">
-<img alt="title" class="entry-thumb" title="title" data-src="/assets/images/logo-high-resolution">
-</a>
-<div class="entry-header">
-<h2 class="entry-title">
-<a href="link">title</a>
-</h2>
-<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2015-02-11T07:18:00-08:00">février 11, 2015</time></span></div>
-</div>
-</article>
-
-
- 
- </div>
-</div>
-<div class="widget FollowByEmail" data-version="2" id="FollowByEmail1">
-<div class="widget-content">
-<div class="widget-content-inner" style="     text-align: center; ">
-<div class="follow-by-email-content">
-<h3 class="follow-by-email-title">
-Over 1,320,000+ Readers
-
-                    </h3>
-<p class="follow-by-email-text excerpt">Get fresh content from WPBeginner
-</p>
-<div class="follow-by-email-inner">
-<ul class="social-footer social social-bg-hover">
-<li class="facebook"><a aria-label="facebook" class="facebook" href="/" target="_blank"></a></li>
-<li class="twitter"><a aria-label="twitter" class="twitter" href="/" target="_blank"></a></li>
-<li class="youtube"><a aria-label="youtube" class="youtube" href="/" target="_blank"></a></li>
-<li class="instagram"><a aria-label="instagram" class="instagram" href="/" target="_blank"></a></li>
-</ul>
-</div>
-<div class="follow-by-email-inner">
-<form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open(" https:="" feedburner.google.com="" fb="" a="" mailverify?uri="ElMagnifico"," "popupwindow",="" "scrollbars="yes,width=550,height=520");" return="" true"="" target="popupwindow">
-<input autocomplete="off" class="follow-by-email-address" name="email" placeholder="Adresse e-mail" type="email">
-<input class="follow-by-email-submit" type="submit" value="S'inscrire">
-<input name="uri" type="hidden" value="ElMagnifico">
-<input name="loc" type="hidden" value="en_US">
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="widget HTML" data-version="2" id="HTML24">
-<div class="widget-title">
-<h3 class="title">facebook</h3>
-</div>
-<div class="widget-content">
-<center><div class="fb-page" data-href="https://www.facebook.com/el-magnifico-%d9%82%d8%a7%d9%84%d8%a8-%d8%a8%d9%84%d9%88%d8%ac%d8%b1-108414657202933/" data-width="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div></center>
-</div>
-</div>
-
-
-
-&gt;<div class="widget Label" data-version="2" id="Label3">
-<div class="widget-title">
-<h3 class="title">Categories</h3>
-</div>
-<div class="widget-content list-label">
-
-
-<ul>
-
-  
-    
-      <li><a class="label-name" href="/category/jekyll">Jekyll  <span class="label-count">(14)</span>
-      </a></li>
-    
-      <li><a class="label-name" href="/category/tutorial">Tutorial  <span class="label-count">(13)</span>
-      </a></li>
-    
-  
-
-</ul>
-
-
-</div>
-</div>
-
-
-<!--
-<div class='widget Label' data-version='2' id='Label2'>
-<div class='widget-title'>
-<h3 class='title'>Main Tags</h3>
-</div>
-<div class='widget-content cloud-label'>
-<ul>
-
- 
-
-  
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#conference">
-        conference
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#js">
-        js
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#learn">
-        learn
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#productivity">
-        productivity
-        <span>(2)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#programming">
-        programming
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#software">
-        software
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#workflow">
-        workflow
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#featured">
-        featured
-        <span>(4)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#jane">
-        jane
-        <span>(1)</span>
-      </a>
-    </li>
-  
-    
-    
-    <li>
-      <a class='label-name'  href="/tags#sticky">
-        sticky
-        <span>(1)</span>
-      </a>
-    </li>
-  
-
-</ul>
-</div>
-
-</div>
- -->
-
-
-</div>
-
-</aside>
-  
-
-
-</div>
-</div>
- 
-
- 	    
-  <div class="clearfix"></div>
-
-  
-	     
-<!-- Footer Wrapper -->
-<footer id="footer-wrapper">
-<div class="container row-x1">
-<div class="about-section section" id="about-section"><div class="widget Image">
-<div class="widget-content">
-<div class="footer-logo custom-image">
-<a href="/">
-<!--<img alt='Tell ME More'   src='https//2.bp.blogspot.com/-EuUkoOFM6_Q/XSC3LpwdxhI/AAAAAAAABTQ/BL1Y7pgLzIMal-XJo8P703_HJPo_2_3kgCK4BGAYYCw/s1600/logo.png'/>-->
-</a>
-</div>
-<div class="about-content">
-<div class="widget-title">
-<h3 class="title">About Us</h3>
-</div>
-<span class="image-caption excerpt">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</span>
-</div>
-</div>
-</div><div class="widget LinkList" id="LinkList158">
-<div class="widget-content">
-<div class="widget-title">
-<h3 class="title">Follow Us</h3>
-</div>
-<ul class="social-footer social social-bg-hover">
-<li class="facebook"><a class="facebook" href="/" target="_blank"></a></li>
-<li class="twitter"><a class="twitter" href="/" target="_blank"></a></li>
-<li class="youtube"><a class="youtube" href="/" target="_blank"></a></li>
-<li class="instagram"><a class="instagram" href="/" target="_blank"></a></li>
- </ul>
-</div>
-</div></div>
-</div>
-<div id="footerbar">
-<div class="container row-x1">
-<div class="footer-copyright" id="footer-copyright">
-<span class="copyright-text widget">Design by - <a href="/">Blogger Templates</a></span>
-</div>
-<div class="footer-menu section" id="footer-menu"><div class="widget LinkList" id="LinkList159">
-<div class="widget-content">
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/">About</a></li>
-<li><a href="/">Contact</a></li>
-<li><a href="/tags">Sitemap</a></li>
-</ul>
-</div>
-</div></div>
-</div>
-</div>
-</footer>
-  
-  	    
-</div>	    
-
-
-	    <div id="slide-menu">
-    <div class="slide-menu-header">
-        <div class="mobile-logo"><a href="https://el-magnifico-template.blogspot.com/">
-El magnifico
-</a></div>
-        <span class="hide-mobile-menu"></span>
-    </div>
-    <div class="slide-menu-flex">
-    
-    
-        <div class="mobile-menu" id="mobile-menu">
-        
-          <ul id="" main-mobile-nav"="">
-
-	    
-       
-        <li>
-          <a href="https://tellmemore.life/">Home</a>
-        </li>
-      
-    
-       
-        <li>
-          <a href="https://tellmemore.life/news/">News</a>
-        </li>
-      
-    
-      
-        <li class="has-sub">
-          <a href="https://tellmemore.life">Snippets   </a>
-          <ul class="sub-menu m-sub">
-          
-            <li><a href="https://tellmemore.life#">Example1</a></li>
-          
-            <li><a href="https://tellmemore.life#">Example2</a></li>
-          
-          </ul>
-          <div class="submenu-toggle"></div>
-        </li>
-      
-    
-
-  </ul> 
-        
-           
-        </div>
-        
-        
-        
-        <div class="social-mobile">
-            <ul class="social-footer social">
-                <li class="facebook">
-                    <a aria-label="facebook" class="facebook" href="#" target="_blank"></a>
-                </li>
-                <li class="twitter">
-                    <a aria-label="twitter" class="twitter" href="#" target="_blank"></a>
-                </li>
-                <li class="youtube">
-                    <a aria-label="youtube" class="youtube" href="#" target="_blank"></a>
-                </li>
-                <li class="instagram">
-                    <a aria-label="instagram" class="instagram" href="#" target="_blank"></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="overlay"></div>
-  
-
-
-    <script>
-
-     var imgs = document.getElementsByTagName("img");
-
-  for (var i = 0; i < imgs.length; i++) {
-	  
-      var img = imgs[i].getAttribute("data-src");
-      
-      console.log(img);
-      var x = Math.round(imgs[i].offsetWidth);
-      var h = Math.round(imgs[i].offsetHeight);
-	  if (h> 1200){
-	  img=img+"-large.webp";
-	  }else if (h> 700){
-		  img=img+"-medium.webp";
-	  }else if (h> 100){
-		  img=img+"-small.webp";  
-	  }else {
-	  		  img=img+"-tiny.webp";  
-	  }
-	  
-	 imgs[i].setAttribute("data-src", img ); 
-}
-
-
-
-
-/* 
-  window.addEventListener("pageshow", myFunction);
-
-function myFunction() {*/
-
-var lazyLoadInstance = new LazyLoad({ }); 
-/*
-}*/
-</script>
-    
-    
-
-
- 
- 
-<script>
-/*!
- * float-sidebar - Lightweight (2kb gzipped), zero-dependency vanilla javascript library for making float sidebars
- * @version v1.2.0
- * @link https://github.com/vursen/FloatSidebar.js
- * @author Sergey Vinogradov
- * @license The MIT License (MIT)
- */
-
-!function(t,n){"object"==typeof exports&&"object"==typeof module?module.exports=n():"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?exports.FloatSidebar=n():t.FloatSidebar=n()}(window,function(){return function(t){var n={};function e(i){if(n[i])return n[i].exports;var o=n[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,e),o.l=!0,o.exports}return e.m=t,e.c=n,e.d=function(t,n,i){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:i})},e.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},e.p="",e(e.s=0)}([function(t,n,e){"use strict";e.r(n);var i,o="START";function r(t,n,e){return n in t?Object.defineProperty(t,n,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[n]=e,t}var s,u=(r(i={},o,[{to:"FINISH",when:function(t){return[!0===t.isSideInnerFitsPath,t.viewportTop+t.sideInnerHeight>=t.finishPoint]}},{to:"BOTTOM_FIXED",when:function(t){return[!0===t.isSideInnerFitsPath,!1===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsPath,!0===t.isSideInnerFitsViewport,t.viewportTop>=t.startPoint-t.topSpacing]}}]),r(i,"TOP_FIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:o,when:function(t){return[t.viewportTop<=t.startPoint-t.topSpacing]}},{to:"FINISH",when:function(t){return[t.sideInnerBottom>=t.finishPoint]}},{to:"UNFIXED",when:function(t){return["down"===t.scrollDirection,!1===t.isSideInnerFitsViewport]}}]),r(i,"UNFIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"TOP_FIXED",when:function(t){return[t.viewportTop<=t.sideInnerTop-t.topSpacing]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}},{to:"BOTTOM_FIXED",when:function(t){return[!1===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}}]),r(i,"BOTTOM_FIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"UNFIXED",when:function(t){return["up"===t.scrollDirection]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsViewport]}},{to:"FINISH",when:function(t){return[t.sideInnerBottom>=t.finishPoint]}}]),r(i,"FINISH",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"BOTTOM_FIXED",when:function(t){return[t.sideInnerBottom+t.bottomSpacing<=t.finishPoint,t.viewportBottom<=t.finishPoint]}},{to:"TOP_FIXED",when:function(t){return[t.viewportTop<=t.sideInnerTop-t.topSpacing]}}]),i);function a(t,n,e){return n in t?Object.defineProperty(t,n,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[n]=e,t}var p=(a(s={},o,function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top="0",e.style.bottom="auto"}),a(s,"TOP_FIXED",function(t,n){var e=n.$sideInner;e.style.position="fixed",e.style.top=t.topSpacing+"px",e.style.bottom="auto"}),a(s,"UNFIXED",function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top=t.sideInnerTop-t.startPoint+"px",e.style.bottom="auto"}),a(s,"BOTTOM_FIXED",function(t,n){var e=n.$sideInner;e.style.position="fixed",e.style.top="auto",e.style.bottom=t.bottomSpacing+"px"}),a(s,"FINISH",function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top="auto",e.style.bottom="0"}),s);var c=function(t){var n=t.actions,e=t.transitions,i=t.initialState;return{findTransitionFor:function(){for(var t=arguments.length,n=Array(t),o=0;o<t;o++)n[o]=arguments[o];return e[i].find(function(t){return t.when.apply(void 0,n).every(function(t){return t})})},performTransition:function(t){var e=t.to;return function(){i=e,n[e].apply(n,arguments)}}}};var f=function(t){var n=void 0;return function(){n||(n=requestAnimationFrame(function(){n=null,t()}))}},d=function(t){var n=t.clientHeight||t.innerHeight,e=t.scrollTop||t.pageYOffset;return{top:e,bottom:e+n,height:n}},l=function(t,n){var e=t.getBoundingClientRect();return{top:e.top+n,
-bottom:e.bottom+n,height:e.height}};var h=function(t,n){var e=n.$viewport,i=n.$relative,o=n.$sideInner,r=n.$sideOuter,s=n.topSpacing,u=n.bottomSpacing,a={},p=function(){var t=d(e),n=l(o,t.top),p=l(r,t.top),c=l(i,t.top),f=function(t){return a.viewportTop<t?"down":a.viewportTop>t?"up":"notChanged"}(t.top),h=p.top,I=c.bottom,v=I-h,w=n.height+s+u<t.height,m=n.height<v,g=Math.max(n.height,v);return{startPoint:h,finishPoint:I,topSpacing:s,bottomSpacing:u,scrollDirection:f,isSideInnerFitsPath:m,isSideInnerFitsViewport:w,sideOuterHeight:g,viewportTop:t.top,viewportBottom:t.bottom,sideInnerTop:n.top,sideInnerBottom:n.bottom,sideInnerHeight:n.height}},c=f(function(){var n=p();t(a,n),a=n});return{start:function(){e.addEventListener("scroll",c),e.addEventListener("resize",c),c()},stop:function(){e.removeEventListener("scroll",c),e.removeEventListener("resize",c)},tick:c}};n.default=function(t){var n=t.viewport||window,e=t.sidebar,i=t.sidebarInner||e.firstElementChild,r=t.relative,s=t.topSpacing||0,a=t.bottomSpacing||0,f=c({actions:p,transitions:u,initialState:o}),d=h(function(t,n){var o=f.findTransitionFor(n);o&&f.performTransition(o)(n,{$sideInner:i,$sideOuter:e,$relative:r}),l(t,n)},{$viewport:n,$sideOuter:e,$sideInner:i,$relative:r,topSpacing:s,bottomSpacing:a}),l=function(t,n){Math.abs((t.sideOuterHeight||0)-n.sideOuterHeight)>=1&&(e.style.height=n.sideOuterHeight+"px")};return requestAnimationFrame(function(){e.style.willChange="height",i.style.width="inherit",i.style.transform="translateZ(0)",i.style.willChange="transform",d.start()}),{forceUpdate:function(){d.tick()},destroy:function(){d.stop()}}}}]).default});
-
-
-
-var sidebar = document.querySelector('#sidebar-wrapper');
-
-var content = document.querySelector('#main-wrapper');
-
-var floatSidebar = FloatSidebar({
-
-    sidebar: sidebar,
-
-    relative: content
-
-});
-
-</script>
-
-<script>
-
-
-/*
-const MAX_RPS = 8,
-    HOVER_DELAY = 50,
-    REQUEST_TIMEOUT = 5e3,
-    toPrefetch = new Set,
-    alreadyPrefetched = new Set,
-    prefetcher = document.createElement("link"),
-    isNativePrefetchSupported = prefetcher.relList && prefetcher.relList.supports && prefetcher.relList.supports("prefetch"),
-    isSlowConnection = navigator.connection && (navigator.connection.saveData || (navigator.connection.effectiveType || "").includes("2g")),
-    prefetch = e => isNativePrefetchSupported ? new Promise((t, r) => {
-	
-        const o = document.createElement("link");
- if(e.indexOf('tellmemore.life') >= 0){
-        o.rel = "prefetch", o.href = e, o.onload = t, o.onerror = r, document.head.appendChild(o)
- }
-  }) : new Promise((t, r) => {
-        const o = new XMLHttpRequest;
-        o.open("GET", e, o.withCredentials = !0), o.onload = (() => {
-            200 === o.status ? t() : r()
-        }), o.send()
-    }),
-    prefetchWithTimeout = e => {
-        const t = setTimeout(() => stopEverything(), 5e3);
-        prefetch(e).catch(() => stopEverything()).finally(() => clearTimeout(t))
-    },
-    addUrlToQueue = (e, t = !1) => {
-        const r = window.location.origin;
-        alreadyPrefetched.has(e) || toPrefetch.has(e) || e.includes("cart") || e.includes("logout") || e.includes("#") || e.substring(0, r.length) === r && window.location.href !== e && (t ? (prefetchWithTimeout(e), alreadyPrefetched.add(e)) : toPrefetch.add(e))
-    },
-    observer = new IntersectionObserver(e => {
-        e.forEach(e => {
-            if (e.isIntersecting) {
-                const t = e.target.href;
-                addUrlToQueue(t)
-            }
-        })
-    }),
-    queue = setInterval(() => {
-        Array.from(toPrefetch).slice(0, 3).forEach(e => {
-            prefetchWithTimeout(e), alreadyPrefetched.add(e), toPrefetch.delete(e)
-        })
-    }, 1e3);
-let hoverLink = null;
-const mouseOverListener = e => {
-        const t = e.target.closest("a");
-        t && t.href && !alreadyPrefetched.has(t.href) && (hoverLink = setTimeout(() => {
-            addUrlToQueue(t.href, !0)
-        }, 200))
-    },
-    mouseOutListener = e => {
-        const t = e.target.closest("a");
-        t && t.href && !alreadyPrefetched.has(t.href) && clearTimeout(hoverLink)
-    };
-window.requestIdleCallback(() => {
-    isSlowConnection || (document.querySelectorAll("a").forEach(e => observer.observe(e)), document.addEventListener("mouseover", mouseOverListener, {
-        capture: !0,
-        passive: !0
-    }), document.addEventListener("mouseout", mouseOutListener, {
-        capture: !0,
-        passive: !0
-    }))
-});
-const stopEverything=()=>{};
-
-*/
-
-var fixedMenu = true;
-
-document.querySelectorAll(".search-toggle")[0].addEventListener("click", function() {
-  document.body.classList.toggle("search-active");
-});
-
-
-var cbox = document.querySelectorAll(".show-mobile-menu, .hide-mobile-menu, .overlay");
-
- for (let i = 0; i < cbox.length; i++) {
-     cbox[i].addEventListener("click", function() {
-      document.body.classList.toggle("nav-active");
-     });
- }
- 
- 
-var acbox = document.querySelectorAll(".mobile-menu ul li .submenu-toggle");
-
- for (let i = 0; i < cbox.length; i++) {
-     acbox[i].addEventListener("click", function() {
-
-           if (acbox[i].parentNode.classList.contains("has-sub")) {
-        event.preventDefault();
-        if (!acbox[i].parentNode.classList.contains("show")) {
-          acbox[i].parentNode.classList.add("show");
-          acbox[i].parentNode.querySelectorAll("ul")[0].style.display = 'block';
-
-                          
-
-        } else {
-          acbox[i].parentNode.classList.remove("show");
-          cbox[i].parentNode.querySelectorAll("ul")[0].style.display = 'none';
-
-
-        }
-      }
-     
-     });
- } 
-
- 
- 
- 
- 
-
-</script>
-
-
-
-<script>
-// ajax Load 
-/*
-  $("#load-more-link").each(function() {
-    var editingEl = $(this);
-    var img = editingEl.data("load");
-    if (img) {
-      $("#load-more-link").show();
-    }
-    $("#load-more-link").on("click", function(event) {
-      $("#load-more-link").hide();
-      $.ajax({
-        url : img,
-        success : function(dzixml) {
-          var jQFooter = $(dzixml).find(".blog-posts");
-          jQFooter.find(".index-post").addClass("post-animated post-fadeInUp");
-          $(".blog-posts").append(jQFooter.html());
-          img = $(dzixml).find("#load-more-link").data("load");
-          if (img) {
-            $("#load-more-link").show();
-          } else {
-            $("#load-more-link").hide();
-            $("#blog-pager .no-more").addClass("show");
-          }
-  if (lazyLoadInstance) {
-    lazyLoadInstance.update();
-}
- 
- 
-
-        },
-        beforeSend : function() {
-          $("#blog-pager .loading").show();
-        },
-        complete : function() {
-          $("#blog-pager .loading").hide();
-        }
-      });
-      event.preventDefault();
-    });
-  });
-
-
-*/
-
-
-</script>
-
-
-
-
-<script>
-
-
-function database(fileName){
-var intview = 1 ;
-  var views ;  
- var sha  ;
-  var filedata ;
-var filename = /* "firstfile.txt" */ "posts/"+fileName;
-            var filemessage = /* "uploading a file" */ fileName;
-            var filecontent = /* "The data of the file2." */ 10 ;
-        var basecontent = btoa(filecontent);
-        var apiurl = "https://api.github.com/repos/"+ github_un+"/"+github_un+".github.io" +"/contents/{+path}".replace('{+path}',filename);
- filedata = '{"message":"'+filemessage+'","content":"'+basecontent+'"}';
-
-$.getJSON( apiurl , function(data) {
-  sha = data.sha ;
-  views = atob( data.content );
-    intview = parseInt(views, 10);
-
-basecontent = btoa(parseInt(views, 10) + Math.floor(Math.random() * 3 ) + 1);
-filedata = '{"message":"'+filemessage+'","content":"'+basecontent+'", "sha":"'+sha+'" }';
-
-}).always(function(response) {
- document.getElementById("entry-view").innerHTML = intview+' ' +  view ;
-   $.ajax({ 
-            url: apiurl,
-            type: 'PUT',
-            beforeSend: function(xhr){xhr.setRequestHeader("Authorization", "token cc6c1caf6974f1372bcd8f83501a62eda18cc74f" ); },
-            data: filedata
-        }).done(function(response) {
-            console.log(response);	
-        });       
-}).fail(function(response) {
-if (response.status === 404 && up_date > 201908310000) {
- 
- }   
-});
- }
- 
-database(post_Id) ;
-  
-</script>
-
-
-<script>
-
-  if('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('/sw.js')
-             .then(function() { console.log("Service Worker Registered"); });
-  }
-</script>
-
-    
-
 <style>
 dl,
 ul,
@@ -7179,6 +3742,3443 @@ code {
 </style>
 
 
+
+    <script>
+
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License 
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this); 
+
+loadCSS("/assets/css/main.css");
+
+*/
+
+
+
+var LazyLoad=function(){"use strict";function t(){return(t=Object.assign||function(t){for(var n=1;n<arguments.length;n++){var e=arguments[n];for(var o in e)Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o])}return t}).apply(this,arguments)}var n="undefined"!=typeof window,e=n&&!("onscroll"in window)||"undefined"!=typeof navigator&&/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),o=n&&"IntersectionObserver"in window,a=n&&"classList"in document.createElement("p"),r={elements_selector:"img",container:e||n?document:null,threshold:300,thresholds:null,data_src:"src",data_srcset:"srcset",data_sizes:"sizes",data_bg:"bg",data_poster:"poster",class_loading:"loading",class_loaded:"loaded",class_error:"error",load_delay:0,auto_unobserve:!0,callback_enter:null,callback_exit:null,callback_loading:null,callback_loaded:null,callback_error:null,callback_finish:null,use_native:!1},i=function(n){return t({},r,n)},s=function(t,n){var e,o=new t(n);try{e=new CustomEvent("LazyLoad::Initialized",{detail:{instance:o}})}catch(t){(e=document.createEvent("CustomEvent")).initCustomEvent("LazyLoad::Initialized",!1,!1,{instance:o})}window.dispatchEvent(e)},c=function(t,n){return t.getAttribute("data-"+n)},l=function(t,n,e){var o="data-"+n;null!==e?t.setAttribute(o,e):t.removeAttribute(o)},u=function(t,n){return l(t,"ll-status",n)},d=function(t,n){return l(t,"ll-timeout",n)},f=function(t){return c(t,"ll-timeout")},_=function(t){for(var n,e=[],o=0;n=t.children[o];o+=1)"SOURCE"===n.tagName&&e.push(n);return e},v=function(t,n,e){e&&t.setAttribute(n,e)},g=function(t,n){v(t,"sizes",c(t,n.data_sizes)),v(t,"srcset",c(t,n.data_srcset)),v(t,"src",c(t,n.data_src))},h={IMG:function(t,n){var e=t.parentNode;e&&"PICTURE"===e.tagName&&_(e).forEach((function(t){g(t,n)}));g(t,n)},IFRAME:function(t,n){v(t,"src",c(t,n.data_src))},VIDEO:function(t,n){_(t).forEach((function(t){v(t,"src",c(t,n.data_src))})),v(t,"poster",c(t,n.data_poster)),v(t,"src",c(t,n.data_src)),t.load()}},b=function(t,n,e){var o=t.tagName,a=h[o];a?(a(t,n),function(t){t&&(t.loadingCount+=1)}(e)):function(t,n){var e=c(t,n.data_src),o=c(t,n.data_bg);e&&(t.style.backgroundImage='url("'.concat(e,'")')),o&&(t.style.backgroundImage=o)}(t,n)},m=function(t,n){a?t.classList.add(n):t.className+=(t.className?" ":"")+n},p=function(t,n){a?t.classList.remove(n):t.className=t.className.replace(new RegExp("(^|\\s+)"+n+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,"")},E=function(t,n,e,o){t&&(void 0===o?void 0===e?t(n):t(n,e):t(n,e,o))},y=function(t,n){n&&(n.loadingCount-=1,L(t,n))},L=function(t,n){n.toLoadCount||n.loadingCount||E(t.callback_finish,n)},w=function(t,n,e){t.addEventListener(n,e)},I=function(t,n,e){t.removeEventListener(n,e)},k=function(t,n,e){I(t,"load",n),I(t,"loadeddata",n),I(t,"error",e)},C=function(t,n,e){var o=function o(r){!function(t,n,e){var o=t.target;u(o,"loaded"),p(o,n.class_loading),m(o,n.class_loaded),E(n.callback_loaded,o,e),y(n,e)}(r,n,e),k(t,o,a)},a=function a(r){!function(t,n,e){var o=t.target;u(o,"error"),p(o,n.class_loading),m(o,n.class_error),E(n.callback_error,o,e),y(n,e)}(r,n,e),k(t,o,a)};!function(t,n,e){w(t,"load",n),w(t,"loadeddata",n),w(t,"error",e)}(t,o,a)},A=["IMG","IFRAME","VIDEO"],z=function(t,n,e){(function(t){return A.indexOf(t.tagName)>-1})(t)&&(C(t,n,e),m(t,n.class_loading)),b(t,n,e),function(t,n){n&&(n.toLoadCount-=1,L(t,n))}(n,e)},O=function(t,n,e){z(t,n,e),u(t,"loading"),E(n.callback_loading,t,e),E(n.callback_reveal,t,e),function(t,n){if(n){var e=n._observer;e&&n._settings.auto_unobserve&&e.unobserve(t)}}(t,e)},N=function(t){var n=f(t);n&&(clearTimeout(n),d(t,null))},M=function(t,n,e){var o=e._settings;E(o.callback_enter,t,n,e),o.load_delay?function(t,n,e){var o=n.load_delay,a=f(t);a||(a=setTimeout((function(){O(t,n,e),N(t)}),o),d(t,a))}(t,o,e):O(t,o,e)},R=["IMG","IFRAME"],x=function(t){return t.use_native&&"loading"in HTMLImageElement.prototype},T=function(t,n,e){t.forEach((function(t){-1!==R.indexOf(t.tagName)&&(t.setAttribute("loading","lazy"),function(t,n,e){z(t,n,e),u(t,"native")}(t,n,e))})),e.toLoadCount=0},F=function(t,n){!function(t){t.
+disconnect()}(t),function(t,n){n.forEach((function(n){t.observe(n),u(n,"observed")}))}(t,n)},G=function(t){var n;o&&!x(t._settings)&&(t._observer=new IntersectionObserver((function(n){n.forEach((function(n){return function(t){return t.isIntersecting||t.intersectionRatio>0}(n)?M(n.target,n,t):function(t,n,e){var o=e._settings;E(o.callback_exit,t,n,e),o.load_delay&&N(t)}(n.target,n,t)}))}),{root:(n=t._settings).container===document?null:n.container,rootMargin:n.thresholds||n.threshold+"px"}))},j=function(t){return Array.prototype.slice.call(t)},D=function(t){return t.container.querySelectorAll(t.elements_selector)},P=function(t){return!function(t){return null!==c(t,"ll-status")}(t)||function(t){return"observed"===c(t,"ll-status")}(t)},S=function(t){return function(t){return"error"===c(t,"ll-status")}(t)},U=function(t,n){return function(t){return j(t).filter(P)}(t||D(n))},V=function(t){var n,e=t._settings;(n=D(e),j(n).filter(S)).forEach((function(t){p(t,e.class_error),function(t){l(t,"ll-status",null)}(t)})),t.update()},$=function(t,e){var o;this._settings=i(t),this.loadingCount=0,G(this),o=this,n&&window.addEventListener("online",(function(t){V(o)})),this.update(e)};return $.prototype={update:function(t){var n=this._settings,a=U(t,n);this.toLoadCount=a.length,!e&&o?x(n)?T(a,n,this):F(this._observer,a):this.loadAll(a)},destroy:function(){this._observer&&this._observer.disconnect(),delete this._observer,delete this._settings,delete this.loadingCount,delete this.toLoadCount},loadAll:function(t){var n=this,e=this._settings;U(t,e).forEach((function(t){O(t,e,n)}))},load:function(t){O(t,this._settings,this)}},$.load=function(t,n){var e=i(n);O(t,e)},n&&function(t,n){if(n)if(n.length)for(var e,o=0;e=n[o];o+=1)s(t,e);else s(t,n)}($,window.lazyLoadOptions),$}();
+ 
+
+
+function loadScript(src, callback) {
+  var s,
+    r,
+    t;
+  r = false;
+  s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.src = src;
+  s.onload = s.onreadystatechange = function() {
+    //console.log( this.readyState ); //uncomment this line to see which ready states are called.
+    if (!r && (!this.readyState || this.readyState == 'complete')) {
+      r = true;
+      callback();
+    }
+  };
+  t = document.getElementsByTagName('script')[0];
+  t.parent.insertBefore(s, t);
+}
+
+
+    </script>
+    
+
+ 		
+
+ 		
+
+</head>
+
+
+
+     
+<body class="index home">
+<nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#header-wrapper" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main-wrapper" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer-wrapper" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+   
+
+
+<div id="outer-wrapper">
+
+
+    <header id="header-wrapper">
+<!-- Headerify -->
+<div class="headerify-wrap">
+<div class="headerify">
+<div class="container row-x1">
+<a aria-label="mobile menu" class="show-mobile-menu" href="javascript:;"></a>
+<div class="main-logo-wrap">
+<div class="main-logo section" id="main-logo"><div class="widget Header" data-version="2" id="Header1">
+<div class="header-widget">
+<h1 class="blog-title">
+<a href="/">
+Tell ME More
+</a>
+</h1>
+</div>
+</div></div>
+</div>
+<nav class="main-menu-wrap">
+<div class="magify-main-menu " id="magify-main-menu">
+<div class="widget LinkList show-menu">
+  <ul id="magify-main-menu-nav">
+
+	    
+       
+        <li>
+          <a href="https://tellmemore.life/">Home</a>
+        </li>
+      
+    
+       
+        <li>
+          <a href="https://tellmemore.life/news/">News</a>
+        </li>
+      
+    
+      
+        <li class="has-sub">
+          <a href="https://tellmemore.life">Snippets   </a>
+          <ul class="sub-menu m-sub">
+          
+            <li><a href="https://tellmemore.life#">Example1</a></li>
+          
+            <li><a href="https://tellmemore.life#">Example2</a></li>
+          
+          </ul>
+          <div class="submenu-toggle"></div>
+        </li>
+      
+    
+
+  </ul> 
+
+
+</div>
+</div>
+</nav>
+<a aria-label="search" class="search-toggle" href="javascript:;"></a>
+<div id="nav-search">
+<form action="https://www.google.com/search" class="search-form" method="get" name="search-form" target="_blank">
+<input name="sitesearch" type="hidden" value="el-magnifico-template.blogspot.com">
+<input autocomplete="on" class="search-input" name="q" placeholder="Rechercher" required="required" type="text">
+<button class="search-action" type="submit">OK</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</header>
+  
+    
+    
+
+    	    	    <!-- Featured Wrapper -->
+
+
+<div id="featured-wrapper">
+<div class="featured container row-x1 section" id="featured" name="Featured Posts"><div class="widget HTML id-featured-recent show-ify">
+<div class="widget-title">
+<h3 class="title">Featured Posts</h3>
+</div>
+<div class="widget-content"><div class="featured-posts">
+
+
+
+
+
+    
+    
+    
+    
+    
+    <article class="featured-item post item-0"><div class="featured-item-inner">
+<a class="entry-image-link before-mask" href="/customer-service">
+    
+      <img title="What is Jekyll" alt="What is Jekyll" class="entry-thumb" data-src="/assets/images/11"> 
+
+       
+    
+    
+    </a><span class="entry-category">Jekyll
+
+ 
+      
+    
+    
+    
+  
+  
+  
+    
+        </span><div class="entry-header entry-info">
+<h2 class="entry-title"><a href="/customer-service">What is Jekyll</a></h2>
+    
+    
+        <div class="entry-meta">
+<span class="entry-author"></span><span class="entry-time"><time class="published"> January 18, 2019</time></span>
+</div>
+
+    
+    </div>
+</div></article>
+    
+    
+    
+ 
+
+    
+
+    
+    
+    
+    
+    
+    <article class="featured-item post item-1"><div class="featured-item-inner">
+<a class="entry-image-link before-mask" href="/we-all-wait-for-summer">
+    
+      <img title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="/assets/images/1"> 
+
+       
+    
+    
+    </a><span class="entry-category">Jekyll
+
+ 
+      
+    
+    
+    
+  
+  
+  
+    
+        </span><div class="entry-header entry-info">
+<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
+    
+    
+        <div class="entry-meta">
+<span class="entry-author"></span><span class="entry-time"><time class="published"> January 28, 2019</time></span>
+</div>
+
+    
+    </div>
+</div></article>
+    
+    
+    
+ 
+
+    
+
+    
+    
+    
+    
+    
+    <article class="featured-item post item-2"><div class="featured-item-inner">
+<a class="entry-image-link before-mask" href="/tree-of-codes">
+    
+      <img title="Tree of Codes" alt="Tree of Codes" class="entry-thumb" data-src="/assets/images/2"> 
+
+       
+    
+    
+    </a><span class="entry-category">Jekyll
+
+ 
+      
+    
+    
+    
+  
+  
+  
+    
+        </span><div class="entry-header entry-info">
+<h2 class="entry-title"><a href="/tree-of-codes">Tree of Codes</a></h2>
+    
+    
+        <div class="entry-meta">
+<span class="entry-author"></span><span class="entry-time"><time class="published"> January 27, 2019</time></span>
+</div>
+
+    
+    </div>
+</div></article>
+    
+    
+    
+ 
+
+    
+
+    
+    
+    
+    
+    
+    <article class="featured-item post item-3"><div class="featured-item-inner">
+<a class="entry-image-link before-mask" href="/first-mass-produced">
+    
+      <img title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="/assets/images/17"> 
+
+       
+    
+    
+    </a><span class="entry-category">tutorial
+
+ 
+      
+    
+    
+    
+  
+  
+  
+    
+        </span><div class="entry-header entry-info">
+<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
+    
+    
+        <div class="entry-meta">
+<span class="entry-author"></span><span class="entry-time"><time class="published"> February 2, 2019</time></span>
+</div>
+
+    
+    </div>
+</div></article>
+    
+    
+    
+ 
+
+    
+
+
+
+
+
+
+</div></div>
+</div></div>
+</div>
+  
+
+
+<!-- Content Wrapper -->
+<div id="content-wrapper">
+<div class="container row-x1">
+
+
+
+
+
+
+<!-- Main Wrapper -->
+<main id="main-wrapper">
+	  
+
+<div class="block-posts section" id="block-posts-1" name="Post Widgets 1">
+
+
+ 
+ <div class="widget HTML      show-ify">
+<div class="widget-title title-wrap">
+<h3 class="title">Tutorial</h3>
+<a class="more" href="/category/tutorial">Show more</a>
+</div>
+<div class="widget-content"><div class="              block-posts-1">
+
+
+
+
+
+
+
+      
+
+
+      
+     
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+                
+                
+                
+                
+
+          <article class="block-item item-0"><div class="block-inner">
+<span class="entry-category">Learn</span><a class="entry-image-link before-mask" href="/first-mass-produced">                
+
+          
+            <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
+
+          
+          </a>
+</div>
+<div class="entry-header entry-info">
+          
+          <h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
+          
+                    <div class="entry-meta">
+<span class="entry-author">Templateify</span><span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span>
+</div>
+          </div></article>
+            
+            
+
+            
+
+                
+
+          
+          
+   
+          
+      
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+                
+                
+                
+                
+                                <article class="block-item item-1"><a class="entry-image-link" href="/education">                
+
+                                  <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
+
+                                </a><div class="entry-header">
+<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+                
+
+          
+          
+   
+          
+      
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+                
+                
+                
+                
+                                <article class="block-item item-2"><a class="entry-image-link" href="/acumulated-experience">                
+
+                                  <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
+
+                                </a><div class="entry-header">
+<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+                
+
+          
+          
+   
+          
+      
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+                
+                
+                
+                
+                                <article class="block-item item-3"><a class="entry-image-link" href="/we-all-wait-for-summer">                
+
+                                  <img width="100%" title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="assets/images/1"> 
+
+                                </a><div class="entry-header">
+<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+                
+
+          
+          
+   
+          
+      
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+                
+                
+                
+                
+                                <article class="block-item item-4"><a class="entry-image-link" href="/tree-of-codes">                
+
+                                  <img width="100%" title="Tree of Codes" alt="Tree of Codes" class="entry-thumb" data-src="assets/images/2"> 
+
+                                </a><div class="entry-header">
+<h2 class="entry-title"><a href="/tree-of-codes">Tree of Codes</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-27T00:00:00+01:00">January 27, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+                
+
+          
+          
+   
+          
+      
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+       
+
+ 
+
+
+
+
+
+
+</div></div>
+</div>
+
+
+ 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+ <div class="widget HTML      show-ify">
+<div class="widget-title title-wrap">
+<h3 class="title">Tutorial</h3>
+<a class="more" href="/category/tutorial">Show more</a>
+</div>
+<div class="widget-content"><div class="              grid-posts-1">
+
+
+
+
+
+
+
+      
+
+
+      
+     
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/first-mass-produced">                
+
+          
+            <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/education">                
+
+          
+            <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/acumulated-experience">                
+
+          
+            <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+       
+
+ 
+
+
+
+
+
+
+</div></div>
+</div>
+
+
+ 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+
+
+<div class="home-ad section" id="home-ads-1" name="Home ADS 1">
+<div class="widget HTML">
+<div class="widget-content">
+<a class="ads-here" href="javascript:;">Responsive Advertisement</a>
+</div>
+</div>
+</div>
+<div class="main section" id="main" name="Main Posts"><div class="widget Blog" data-version="2" id="Blog1">
+<div class="blog-posts-title title-wrap">
+<h3 class="title">Latest Posts</h3>
+
+ 
+</div>
+
+
+<div id="blogContainer" class="blog-posts hfeed container index-post-wrap" data-page="1" data-totalpages="2">
+
+
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/first-mass-produced">
+<img class="entry-thumb" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" data-src="/assets/images/17">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">sal</span>
+<span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/education">
+<img class="entry-thumb" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." data-src="/assets/images/3">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/education">Education must also train one for quick, resolute and effective thinking.</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">Adhy Suryadi</span>
+<span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">You are Jekyll offline! You are jekyll offline! There are lots of powerful things you can do with the Markdown...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/acumulated-experience">
+<img class="entry-thumb" title="Accumulated experience of social living" alt="Accumulated experience of social living" data-src="/assets/images/15">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/acumulated-experience">Accumulated experience of social living</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">sal</span>
+<span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/about-bundler">
+<img class="entry-thumb" title="About Bundler" alt="About Bundler" data-src="/assets/images/2">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/about-bundler">About Bundler</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">sal</span>
+<span class="entry-time"><time class="published" datetime="2019-01-29T00:00:00+01:00">January 29, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">gem install bundler installs the bundler gem through RubyGems. You only need to install it once - not every time...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/we-all-wait-for-summer">
+<img class="entry-thumb" title="We all wait for summer" alt="We all wait for summer" data-src="/assets/images/1">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/we-all-wait-for-summer">We all wait for summer</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">jane</span>
+<span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">This is changed. As I engage in the so-called “bull sessions” around and about the school, I too often find...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/tree-of-codes">
+<img class="entry-thumb" title="Tree of Codes" alt="Tree of Codes" data-src="/assets/images/2">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/tree-of-codes">Tree of Codes</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">sal</span>
+<span class="entry-time"><time class="published" datetime="2019-01-27T00:00:00+01:00">January 27, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/red-riding">
+<img class="entry-thumb" title="Red Riding Hood" alt="Red Riding Hood" data-src="/assets/images/3">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/red-riding">Red Riding Hood</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">sal</span>
+<span class="entry-time"><time class="published" datetime="2019-01-26T00:00:00+01:00">January 26, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/press-and-education">
+<img class="entry-thumb" title="Press and education" alt="Press and education" data-src="/assets/images/7">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/press-and-education">Press and education</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">sal</span>
+<span class="entry-time"><time class="published" datetime="2019-01-25T00:00:00+01:00">January 25, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">Even the press, the classroom, the platform, and the pulpit in many instances do not give us objective and unbiased...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/options-for-creating-new-site-with-jekyll">
+<img class="entry-thumb" title="Options for creating a new site with Jekyll" alt="Options for creating a new site with Jekyll" data-src="/assets/images/13">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/options-for-creating-new-site-with-jekyll">Options for creating a new site with Jekyll</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">jane</span>
+<span class="entry-time"><time class="published" datetime="2019-01-23T00:00:00+01:00">January 23, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">jekyll new &lt;PATH&gt; installs a new Jekyll site at the path specified (relative to current directory). In this case, Jekyll...</p>
+</div>
+</article>
+
+
+
+
+<article class="blog-post hentry index-post post-0">
+
+<div class="entry-image">
+<span class="entry-category">Business</span>
+<a class="entry-image-link" href="/never-stopped-worrying-never-loved-bomb">
+<img class="entry-thumb" title="Never stopped worrying or loving the bomb" alt="Never stopped worrying or loving the bomb" data-src="/assets/images/14">
+</a>
+</div>
+<div class="entry-header">
+<h2 class="entry-title">
+<a class="entry-title-link" href="/never-stopped-worrying-never-loved-bomb">Never stopped worrying or loving the bomb</a>
+</h2>
+<div class="entry-meta">
+<span class="entry-author">sal</span>
+<span class="entry-time"><time class="published" datetime="2019-01-22T00:00:00+01:00">January 22, 2019</time></span>
+</div>
+<p class="entry-excerpt excerpt">I’ve been through fire and water, I tell you! From my earliest pebblehood the wildest things you could imagine have...</p>
+</div>
+</article>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="blog-pager container" id="blog-pager">
+
+
+<a class="blog-pager-older-link load-more" id="load-more-link">
+Load More
+</a>
+
+
+<span id="loading" class="loading"><span class="loader"></span></span>
+<span class="no-more load-more">
+That is All
+</span>
+</div>
+
+
+<script>
+
+  var blogContainer = document.getElementById("blogContainer"),loading = document.getElementById("loading");
+
+document.getElementById("load-more-link").addEventListener("click",loadMorePosts);
+
+
+function loadMorePosts() {
+loading.style.display = 'block';
+
+  var _this = this;
+  var nextPage = parseInt(blogContainer.getAttribute("data-page")) + 1;
+  var totalPages = parseInt(blogContainer.getAttribute("data-totalPages"));
+  
+  
+var request = new XMLHttpRequest();
+request.open('GET', "/page" + nextPage, true);
+
+request.onload = function() {
+  if (this.status >= 200 && this.status < 400) {
+var div = document.createElement("div");
+div.innerHTML = this.response;
+
+var elements = div.querySelectorAll(".blog-post");
+console.log(elements);
+
+Array.prototype.forEach.call(elements, function(el, i){
+blogContainer.setAttribute('data-page', nextPage)
+blogContainer.appendChild(el);
+
+
+
+    
+
+});
+
+    if (blogContainer.getAttribute("data-totalPages") == nextPage) {
+      let loadMore = document.getElementById("load-more-link");
+      loadMore.style.display = 'none';
+
+    }
+ 
+lazyLoadInstance.update();
+
+  } 
+};
+
+request.send();
+}
+
+
+
+</script>
+
+
+            
+</div></div>
+<div id="custom-ads">
+</div>
+<div class="home-ad section" id="home-ads-2" name="Home ADS 2"><div class="widget HTML" data-version="2" id="HTML8">
+<div class="widget-content">
+<a class="ads-here" href="javascript:;">Responsive Advertisement</a>
+</div>
+</div></div>
+
+	  
+
+<div class="block-posts section" id="block-posts-2" name="Post Widgets 2">
+
+ <div class="widget HTML      show-ify">
+<div class="widget-title title-wrap">
+<h3 class="title">Tutorial</h3>
+<a class="more" href="/category/tutorial">Show more</a>
+</div>
+<div class="widget-content"><div class="              block-videos">
+
+
+
+
+
+
+
+      
+
+
+      
+     
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+                  
+                
+                  
+
+          <article class="videos-item "><div class="entry-image"><a class="entry-image-link" href="/first-mass-produced">                
+
+          
+            <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
+
+          <span class="video-icon"></span></a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span></div>
+</div></article>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+                  
+                
+                  
+
+          <article class="videos-item "><div class="entry-image"><a class="entry-image-link" href="/education">                
+
+          
+            <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
+
+          <span class="video-icon"></span></a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
+</div></article>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+                  
+                
+                  
+
+          <article class="videos-item "><div class="entry-image"><a class="entry-image-link" href="/acumulated-experience">                
+
+          
+            <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
+
+          <span class="video-icon"></span></a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
+</div></article>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+       
+
+ 
+
+
+
+
+
+
+</div></div>
+</div>
+
+
+ 
+
+
+
+
+
+
+  
+
+
+<div class="widget HTML    column-left block-column       show-ify">
+<div class="widget-title title-wrap">
+<h3 class="title">Tutorial</h3>
+<a class="more" href="/category/tutorial">Show more</a>
+</div>
+<div class="widget-content"><div class="             column-posts            ">
+
+
+
+
+
+
+
+      
+
+
+      
+     
+    
+      
+      
+
+      
+      
+      
+      
+             
+                
+                
+                
+                
+
+
+                
+
+                
+              <article class="column-item item-5"><div class="column-inner">' + thisM + '<a class="entry-image-link before-mask" href="/first-mass-produced">
+                              
+  <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
+
+              
+              </a><div class="entry-header entry-info">
+<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
+<span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span>
+</div>
+</div></article>  
+                
+   
+            
+
+            
+
+           
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+                
+                
+                
+                
+            
+                                <article class="column-item item-6"><a class="entry-image-link" href="/education">                
+
+  
+  
+  
+  <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
+
+  </a><div class="entry-header">
+<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+           
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+                
+                
+                
+                
+            
+                                <article class="column-item item-7"><a class="entry-image-link" href="/acumulated-experience">                
+
+  
+  
+  
+  <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
+
+  </a><div class="entry-header">
+<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+           
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+                
+                
+                
+                
+            
+                                <article class="column-item item-8"><a class="entry-image-link" href="/we-all-wait-for-summer">                
+
+  
+  
+  
+  <img width="100%" title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="assets/images/1"> 
+
+  </a><div class="entry-header">
+<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+           
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+       
+
+ 
+
+
+
+
+
+
+</div></div>
+</div>
+
+
+ 
+
+
+
+
+
+
+  
+
+<div class="widget HTML       column-right block-column    show-ify">
+<div class="widget-title title-wrap">
+<h3 class="title">Tutorial</h3>
+<a class="more" href="/category/tutorial">Show more</a>
+</div>
+<div class="widget-content"><div class="             column-posts            ">
+
+
+
+
+
+
+
+      
+
+
+      
+     
+    
+      
+      
+
+      
+      
+      
+      
+             
+                
+                
+                
+                
+
+
+                
+
+                
+              <article class="column-item item-9"><div class="column-inner">' + thisM + '<a class="entry-image-link before-mask" href="/first-mass-produced">
+                              
+  <img width="100%" title="The first mass-produced book to deviate from a rectilinear format" alt="The first mass-produced book to deviate from a rectilinear format" class="entry-thumb" data-src="assets/images/17"> 
+
+              
+              </a><div class="entry-header entry-info">
+<h2 class="entry-title"><a href="/first-mass-produced">The first mass-produced book to deviate from a rectilinear format</a></h2>
+<span class="entry-time"><time class="published" datetime="2019-02-02T00:00:00+01:00">February 2, 2019</time></span>
+</div>
+</div></article>  
+                
+   
+            
+
+            
+
+           
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+                
+                
+                
+                
+            
+                                <article class="column-item item-10"><a class="entry-image-link" href="/education">                
+
+  
+  
+  
+  <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
+
+  </a><div class="entry-header">
+<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+           
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+                
+                
+                
+                
+            
+                                <article class="column-item item-11"><a class="entry-image-link" href="/acumulated-experience">                
+
+  
+  
+  
+  <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
+
+  </a><div class="entry-header">
+<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+           
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+                
+                
+                
+                
+            
+                                <article class="column-item item-12"><a class="entry-image-link" href="/we-all-wait-for-summer">                
+
+  
+  
+  
+  <img width="100%" title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="assets/images/1"> 
+
+  </a><div class="entry-header">
+<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span></div>
+</div></article>
+
+            
+  
+
+           
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+       
+
+ 
+
+
+
+
+
+
+</div></div>
+</div>
+
+
+ 
+
+
+
+
+
+
+  
+
+
+
+ <div class="widget HTML      show-ify">
+<div class="widget-title title-wrap">
+<h3 class="title">Jekyll</h3>
+<a class="more" href="/category/Jekyll">Show more</a>
+</div>
+<div class="widget-content"><div class="              grid-posts-1">
+
+
+
+
+
+
+
+      
+     
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/education">                
+
+          
+            <img width="100%" title="Education must also train one for quick, resolute and effective thinking." alt="Education must also train one for quick, resolute and effective thinking." class="entry-thumb" data-src="assets/images/3"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/education">Education must also train one for quick, resolute and effective thinking.</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-02-01T00:00:00+01:00">February 1, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/acumulated-experience">                
+
+          
+            <img width="100%" title="Accumulated experience of social living" alt="Accumulated experience of social living" class="entry-thumb" data-src="assets/images/15"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/acumulated-experience">Accumulated experience of social living</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-30T00:00:00+01:00">January 30, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/about-bundler">                
+
+          
+            <img width="100%" title="About Bundler" alt="About Bundler" class="entry-thumb" data-src="assets/images/2"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/about-bundler">About Bundler</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-29T00:00:00+01:00">January 29, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/we-all-wait-for-summer">                
+
+          
+            <img width="100%" title="We all wait for summer" alt="We all wait for summer" class="entry-thumb" data-src="assets/images/1"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-28T00:00:00+01:00">January 28, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/tree-of-codes">                
+
+          
+            <img width="100%" title="Tree of Codes" alt="Tree of Codes" class="entry-thumb" data-src="assets/images/2"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/tree-of-codes">Tree of Codes</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-27T00:00:00+01:00">January 27, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+      
+      
+
+      
+      
+      
+      
+             
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                
+
+      
+      
+      
+      
+      
+      
+            
+            
+            
+            
+          <article class="grid-item "><div class="entry-image"><a class="entry-image-link" href="/red-riding">                
+
+          
+            <img width="100%" title="Red Riding Hood" alt="Red Riding Hood" class="entry-thumb" data-src="assets/images/3"> 
+
+          </a></div>
+<div class="entry-header">
+<h2 class="entry-title"><a href="/red-riding">Red Riding Hood</a></h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-26T00:00:00+01:00">January 26, 2019</time></span></div>
+</div></article>
+      
+
+      
+                  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+       
+
+
+      
+
+ 
+
+
+
+
+
+
+</div></div>
+</div>
+
+
+ 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</main>
+
+    <!-- Sidebar Wrapper -->
+<aside class="sidebar-ads-active" id="sidebar-wrapper">
+ 
+<div class="sidebar widget-ready section" id="sidebar" name="Main Sidebar">
+<div class="widget PopularPosts" data-version="2" id="PopularPosts1">
+<div class="widget-title">
+<h3 class="title">Most Popular</h3>
+</div>
+<div class="widget-content">
+
+
+<article class="popular-post post item-0">
+<a class="entry-image-link" href="link">
+<img alt="title" class="entry-thumb" title="title" data-src="/assets/images/logo-high-resolution">
+</a>
+<div class="entry-header">
+<h2 class="entry-title">
+<a href="link">title</a>
+</h2>
+<div class="entry-meta"><span class="entry-time"><time class="published" datetime="2015-02-11T07:18:00-08:00">février 11, 2015</time></span></div>
+</div>
+</article>
+
+
+ 
+ </div>
+</div>
+<div class="widget FollowByEmail" data-version="2" id="FollowByEmail1">
+<div class="widget-content">
+<div class="widget-content-inner" style="     text-align: center; ">
+<div class="follow-by-email-content">
+<h3 class="follow-by-email-title">
+Over 1,320,000+ Readers
+
+                    </h3>
+<p class="follow-by-email-text excerpt">Get fresh content from WPBeginner
+</p>
+<div class="follow-by-email-inner">
+<ul class="social-footer social social-bg-hover">
+<li class="facebook"><a aria-label="facebook" class="facebook" href="/" target="_blank"></a></li>
+<li class="twitter"><a aria-label="twitter" class="twitter" href="/" target="_blank"></a></li>
+<li class="youtube"><a aria-label="youtube" class="youtube" href="/" target="_blank"></a></li>
+<li class="instagram"><a aria-label="instagram" class="instagram" href="/" target="_blank"></a></li>
+</ul>
+</div>
+<div class="follow-by-email-inner">
+<form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open(" https:="" feedburner.google.com="" fb="" a="" mailverify?uri="ElMagnifico"," "popupwindow",="" "scrollbars="yes,width=550,height=520");" return="" true"="" target="popupwindow">
+<input autocomplete="off" class="follow-by-email-address" name="email" placeholder="Adresse e-mail" type="email">
+<input class="follow-by-email-submit" type="submit" value="S'inscrire">
+<input name="uri" type="hidden" value="ElMagnifico">
+<input name="loc" type="hidden" value="en_US">
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="widget HTML" data-version="2" id="HTML24">
+<div class="widget-title">
+<h3 class="title">facebook</h3>
+</div>
+<div class="widget-content">
+<center><div class="fb-page" data-href="https://www.facebook.com/el-magnifico-%d9%82%d8%a7%d9%84%d8%a8-%d8%a8%d9%84%d9%88%d8%ac%d8%b1-108414657202933/" data-width="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div></center>
+</div>
+</div>
+
+
+
+&gt;<div class="widget Label" data-version="2" id="Label3">
+<div class="widget-title">
+<h3 class="title">Categories</h3>
+</div>
+<div class="widget-content list-label">
+
+
+<ul>
+
+  
+    
+      <li><a class="label-name" href="/category/jekyll">Jekyll  <span class="label-count">(14)</span>
+      </a></li>
+    
+      <li><a class="label-name" href="/category/tutorial">Tutorial  <span class="label-count">(13)</span>
+      </a></li>
+    
+  
+
+</ul>
+
+
+</div>
+</div>
+
+
+<!--
+<div class='widget Label' data-version='2' id='Label2'>
+<div class='widget-title'>
+<h3 class='title'>Main Tags</h3>
+</div>
+<div class='widget-content cloud-label'>
+<ul>
+
+ 
+
+  
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#conference">
+        conference
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#js">
+        js
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#learn">
+        learn
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#productivity">
+        productivity
+        <span>(2)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#programming">
+        programming
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#software">
+        software
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#workflow">
+        workflow
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#featured">
+        featured
+        <span>(4)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#jane">
+        jane
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#sticky">
+        sticky
+        <span>(1)</span>
+      </a>
+    </li>
+  
+
+</ul>
+</div>
+
+</div>
+ -->
+
+
+</div>
+
+</aside>
+  
+
+
+</div>
+</div>
+ 
+
+ 	    
+  <div class="clearfix"></div>
+
+  
+	     
+<!-- Footer Wrapper -->
+<footer id="footer-wrapper">
+<div class="container row-x1">
+<div class="about-section section" id="about-section"><div class="widget Image">
+<div class="widget-content">
+<div class="footer-logo custom-image">
+<a href="/">
+<!--<img alt='Tell ME More'   src='https//2.bp.blogspot.com/-EuUkoOFM6_Q/XSC3LpwdxhI/AAAAAAAABTQ/BL1Y7pgLzIMal-XJo8P703_HJPo_2_3kgCK4BGAYYCw/s1600/logo.png'/>-->
+</a>
+</div>
+<div class="about-content">
+<div class="widget-title">
+<h3 class="title">About Us</h3>
+</div>
+<span class="image-caption excerpt">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</span>
+</div>
+</div>
+</div><div class="widget LinkList" id="LinkList158">
+<div class="widget-content">
+<div class="widget-title">
+<h3 class="title">Follow Us</h3>
+</div>
+<ul class="social-footer social social-bg-hover">
+<li class="facebook"><a class="facebook" href="/" target="_blank"></a></li>
+<li class="twitter"><a class="twitter" href="/" target="_blank"></a></li>
+<li class="youtube"><a class="youtube" href="/" target="_blank"></a></li>
+<li class="instagram"><a class="instagram" href="/" target="_blank"></a></li>
+ </ul>
+</div>
+</div></div>
+</div>
+<div id="footerbar">
+<div class="container row-x1">
+<div class="footer-copyright" id="footer-copyright">
+<span class="copyright-text widget">Design by - <a href="/">Blogger Templates</a></span>
+</div>
+<div class="footer-menu section" id="footer-menu"><div class="widget LinkList" id="LinkList159">
+<div class="widget-content">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/">About</a></li>
+<li><a href="/">Contact</a></li>
+<li><a href="/tags">Sitemap</a></li>
+</ul>
+</div>
+</div></div>
+</div>
+</div>
+</footer>
+  
+  	    
+</div>	    
+
+
+	    <div id="slide-menu">
+    <div class="slide-menu-header">
+        <div class="mobile-logo"><a href="https://el-magnifico-template.blogspot.com/">
+El magnifico
+</a></div>
+        <span class="hide-mobile-menu"></span>
+    </div>
+    <div class="slide-menu-flex">
+    
+    
+        <div class="mobile-menu" id="mobile-menu">
+        
+          <ul id="" main-mobile-nav"="">
+
+	    
+       
+        <li>
+          <a href="https://tellmemore.life/">Home</a>
+        </li>
+      
+    
+       
+        <li>
+          <a href="https://tellmemore.life/news/">News</a>
+        </li>
+      
+    
+      
+        <li class="has-sub">
+          <a href="https://tellmemore.life">Snippets   </a>
+          <ul class="sub-menu m-sub">
+          
+            <li><a href="https://tellmemore.life#">Example1</a></li>
+          
+            <li><a href="https://tellmemore.life#">Example2</a></li>
+          
+          </ul>
+          <div class="submenu-toggle"></div>
+        </li>
+      
+    
+
+  </ul> 
+        
+           
+        </div>
+        
+        
+        
+        <div class="social-mobile">
+            <ul class="social-footer social">
+                <li class="facebook">
+                    <a aria-label="facebook" class="facebook" href="#" target="_blank"></a>
+                </li>
+                <li class="twitter">
+                    <a aria-label="twitter" class="twitter" href="#" target="_blank"></a>
+                </li>
+                <li class="youtube">
+                    <a aria-label="youtube" class="youtube" href="#" target="_blank"></a>
+                </li>
+                <li class="instagram">
+                    <a aria-label="instagram" class="instagram" href="#" target="_blank"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="overlay"></div>
+  
+
+
+    <script>
+
+     var imgs = document.getElementsByTagName("img");
+
+  for (var i = 0; i < imgs.length; i++) {
+	  
+      var img = imgs[i].getAttribute("data-src");
+      
+      console.log(img);
+      var x = Math.round(imgs[i].offsetWidth);
+      var h = Math.round(imgs[i].offsetHeight);
+	  if (h> 1200){
+	  img=img+"-large.webp";
+	  }else if (h> 700){
+		  img=img+"-medium.webp";
+	  }else if (h> 100){
+		  img=img+"-small.webp";  
+	  }else {
+	  		  img=img+"-tiny.webp";  
+	  }
+	  
+	 imgs[i].setAttribute("data-src", img ); 
+}
+
+
+
+
+/* 
+  window.addEventListener("pageshow", myFunction);
+
+function myFunction() {*/
+
+// var lazyLoadInstance = new LazyLoad({ }); 
+/*
+}*/
+</script>
+    
+    
+
+
+ 
+ 
+<script>
+/*!
+ * float-sidebar - Lightweight (2kb gzipped), zero-dependency vanilla javascript library for making float sidebars
+ * @version v1.2.0
+ * @link https://github.com/vursen/FloatSidebar.js
+ * @author Sergey Vinogradov
+ * @license The MIT License (MIT)
+ */
+
+!function(t,n){"object"==typeof exports&&"object"==typeof module?module.exports=n():"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?exports.FloatSidebar=n():t.FloatSidebar=n()}(window,function(){return function(t){var n={};function e(i){if(n[i])return n[i].exports;var o=n[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,e),o.l=!0,o.exports}return e.m=t,e.c=n,e.d=function(t,n,i){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:i})},e.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},e.p="",e(e.s=0)}([function(t,n,e){"use strict";e.r(n);var i,o="START";function r(t,n,e){return n in t?Object.defineProperty(t,n,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[n]=e,t}var s,u=(r(i={},o,[{to:"FINISH",when:function(t){return[!0===t.isSideInnerFitsPath,t.viewportTop+t.sideInnerHeight>=t.finishPoint]}},{to:"BOTTOM_FIXED",when:function(t){return[!0===t.isSideInnerFitsPath,!1===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsPath,!0===t.isSideInnerFitsViewport,t.viewportTop>=t.startPoint-t.topSpacing]}}]),r(i,"TOP_FIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:o,when:function(t){return[t.viewportTop<=t.startPoint-t.topSpacing]}},{to:"FINISH",when:function(t){return[t.sideInnerBottom>=t.finishPoint]}},{to:"UNFIXED",when:function(t){return["down"===t.scrollDirection,!1===t.isSideInnerFitsViewport]}}]),r(i,"UNFIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"TOP_FIXED",when:function(t){return[t.viewportTop<=t.sideInnerTop-t.topSpacing]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}},{to:"BOTTOM_FIXED",when:function(t){return[!1===t.isSideInnerFitsViewport,t.viewportBottom>=t.sideInnerBottom+t.bottomSpacing]}}]),r(i,"BOTTOM_FIXED",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"UNFIXED",when:function(t){return["up"===t.scrollDirection]}},{to:"TOP_FIXED",when:function(t){return[!0===t.isSideInnerFitsViewport]}},{to:"FINISH",when:function(t){return[t.sideInnerBottom>=t.finishPoint]}}]),r(i,"FINISH",[{to:o,when:function(t){return[!1===t.isSideInnerFitsPath]}},{to:"BOTTOM_FIXED",when:function(t){return[t.sideInnerBottom+t.bottomSpacing<=t.finishPoint,t.viewportBottom<=t.finishPoint]}},{to:"TOP_FIXED",when:function(t){return[t.viewportTop<=t.sideInnerTop-t.topSpacing]}}]),i);function a(t,n,e){return n in t?Object.defineProperty(t,n,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[n]=e,t}var p=(a(s={},o,function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top="0",e.style.bottom="auto"}),a(s,"TOP_FIXED",function(t,n){var e=n.$sideInner;e.style.position="fixed",e.style.top=t.topSpacing+"px",e.style.bottom="auto"}),a(s,"UNFIXED",function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top=t.sideInnerTop-t.startPoint+"px",e.style.bottom="auto"}),a(s,"BOTTOM_FIXED",function(t,n){var e=n.$sideInner;e.style.position="fixed",e.style.top="auto",e.style.bottom=t.bottomSpacing+"px"}),a(s,"FINISH",function(t,n){var e=n.$sideInner;e.style.position="absolute",e.style.top="auto",e.style.bottom="0"}),s);var c=function(t){var n=t.actions,e=t.transitions,i=t.initialState;return{findTransitionFor:function(){for(var t=arguments.length,n=Array(t),o=0;o<t;o++)n[o]=arguments[o];return e[i].find(function(t){return t.when.apply(void 0,n).every(function(t){return t})})},performTransition:function(t){var e=t.to;return function(){i=e,n[e].apply(n,arguments)}}}};var f=function(t){var n=void 0;return function(){n||(n=requestAnimationFrame(function(){n=null,t()}))}},d=function(t){var n=t.clientHeight||t.innerHeight,e=t.scrollTop||t.pageYOffset;return{top:e,bottom:e+n,height:n}},l=function(t,n){var e=t.getBoundingClientRect();return{top:e.top+n,
+bottom:e.bottom+n,height:e.height}};var h=function(t,n){var e=n.$viewport,i=n.$relative,o=n.$sideInner,r=n.$sideOuter,s=n.topSpacing,u=n.bottomSpacing,a={},p=function(){var t=d(e),n=l(o,t.top),p=l(r,t.top),c=l(i,t.top),f=function(t){return a.viewportTop<t?"down":a.viewportTop>t?"up":"notChanged"}(t.top),h=p.top,I=c.bottom,v=I-h,w=n.height+s+u<t.height,m=n.height<v,g=Math.max(n.height,v);return{startPoint:h,finishPoint:I,topSpacing:s,bottomSpacing:u,scrollDirection:f,isSideInnerFitsPath:m,isSideInnerFitsViewport:w,sideOuterHeight:g,viewportTop:t.top,viewportBottom:t.bottom,sideInnerTop:n.top,sideInnerBottom:n.bottom,sideInnerHeight:n.height}},c=f(function(){var n=p();t(a,n),a=n});return{start:function(){e.addEventListener("scroll",c),e.addEventListener("resize",c),c()},stop:function(){e.removeEventListener("scroll",c),e.removeEventListener("resize",c)},tick:c}};n.default=function(t){var n=t.viewport||window,e=t.sidebar,i=t.sidebarInner||e.firstElementChild,r=t.relative,s=t.topSpacing||0,a=t.bottomSpacing||0,f=c({actions:p,transitions:u,initialState:o}),d=h(function(t,n){var o=f.findTransitionFor(n);o&&f.performTransition(o)(n,{$sideInner:i,$sideOuter:e,$relative:r}),l(t,n)},{$viewport:n,$sideOuter:e,$sideInner:i,$relative:r,topSpacing:s,bottomSpacing:a}),l=function(t,n){Math.abs((t.sideOuterHeight||0)-n.sideOuterHeight)>=1&&(e.style.height=n.sideOuterHeight+"px")};return requestAnimationFrame(function(){e.style.willChange="height",i.style.width="inherit",i.style.transform="translateZ(0)",i.style.willChange="transform",d.start()}),{forceUpdate:function(){d.tick()},destroy:function(){d.stop()}}}}]).default});
+
+
+
+var sidebar = document.querySelector('#sidebar-wrapper');
+
+var content = document.querySelector('#main-wrapper');
+
+var floatSidebar = FloatSidebar({
+
+    sidebar: sidebar,
+
+    relative: content
+
+});
+
+</script>
+
+<script>
+
+
+/*
+const MAX_RPS = 8,
+    HOVER_DELAY = 50,
+    REQUEST_TIMEOUT = 5e3,
+    toPrefetch = new Set,
+    alreadyPrefetched = new Set,
+    prefetcher = document.createElement("link"),
+    isNativePrefetchSupported = prefetcher.relList && prefetcher.relList.supports && prefetcher.relList.supports("prefetch"),
+    isSlowConnection = navigator.connection && (navigator.connection.saveData || (navigator.connection.effectiveType || "").includes("2g")),
+    prefetch = e => isNativePrefetchSupported ? new Promise((t, r) => {
+	
+        const o = document.createElement("link");
+ if(e.indexOf('tellmemore.life') >= 0){
+        o.rel = "prefetch", o.href = e, o.onload = t, o.onerror = r, document.head.appendChild(o)
+ }
+  }) : new Promise((t, r) => {
+        const o = new XMLHttpRequest;
+        o.open("GET", e, o.withCredentials = !0), o.onload = (() => {
+            200 === o.status ? t() : r()
+        }), o.send()
+    }),
+    prefetchWithTimeout = e => {
+        const t = setTimeout(() => stopEverything(), 5e3);
+        prefetch(e).catch(() => stopEverything()).finally(() => clearTimeout(t))
+    },
+    addUrlToQueue = (e, t = !1) => {
+        const r = window.location.origin;
+        alreadyPrefetched.has(e) || toPrefetch.has(e) || e.includes("cart") || e.includes("logout") || e.includes("#") || e.substring(0, r.length) === r && window.location.href !== e && (t ? (prefetchWithTimeout(e), alreadyPrefetched.add(e)) : toPrefetch.add(e))
+    },
+    observer = new IntersectionObserver(e => {
+        e.forEach(e => {
+            if (e.isIntersecting) {
+                const t = e.target.href;
+                addUrlToQueue(t)
+            }
+        })
+    }),
+    queue = setInterval(() => {
+        Array.from(toPrefetch).slice(0, 3).forEach(e => {
+            prefetchWithTimeout(e), alreadyPrefetched.add(e), toPrefetch.delete(e)
+        })
+    }, 1e3);
+let hoverLink = null;
+const mouseOverListener = e => {
+        const t = e.target.closest("a");
+        t && t.href && !alreadyPrefetched.has(t.href) && (hoverLink = setTimeout(() => {
+            addUrlToQueue(t.href, !0)
+        }, 200))
+    },
+    mouseOutListener = e => {
+        const t = e.target.closest("a");
+        t && t.href && !alreadyPrefetched.has(t.href) && clearTimeout(hoverLink)
+    };
+window.requestIdleCallback(() => {
+    isSlowConnection || (document.querySelectorAll("a").forEach(e => observer.observe(e)), document.addEventListener("mouseover", mouseOverListener, {
+        capture: !0,
+        passive: !0
+    }), document.addEventListener("mouseout", mouseOutListener, {
+        capture: !0,
+        passive: !0
+    }))
+});
+const stopEverything=()=>{};
+
+*/
+
+var fixedMenu = true;
+
+document.querySelectorAll(".search-toggle")[0].addEventListener("click", function() {
+  document.body.classList.toggle("search-active");
+});
+
+
+var cbox = document.querySelectorAll(".show-mobile-menu, .hide-mobile-menu, .overlay");
+
+ for (let i = 0; i < cbox.length; i++) {
+     cbox[i].addEventListener("click", function() {
+      document.body.classList.toggle("nav-active");
+     });
+ }
+ 
+ 
+var acbox = document.querySelectorAll(".mobile-menu ul li .submenu-toggle");
+
+ for (let i = 0; i < cbox.length; i++) {
+     acbox[i].addEventListener("click", function() {
+
+           if (acbox[i].parentNode.classList.contains("has-sub")) {
+        event.preventDefault();
+        if (!acbox[i].parentNode.classList.contains("show")) {
+          acbox[i].parentNode.classList.add("show");
+          acbox[i].parentNode.querySelectorAll("ul")[0].style.display = 'block';
+
+                          
+
+        } else {
+          acbox[i].parentNode.classList.remove("show");
+          cbox[i].parentNode.querySelectorAll("ul")[0].style.display = 'none';
+
+
+        }
+      }
+     
+     });
+ } 
+
+ 
+ 
+ 
+ 
+
+</script>
+
+
+
+<script>
+// ajax Load 
+/*
+  $("#load-more-link").each(function() {
+    var editingEl = $(this);
+    var img = editingEl.data("load");
+    if (img) {
+      $("#load-more-link").show();
+    }
+    $("#load-more-link").on("click", function(event) {
+      $("#load-more-link").hide();
+      $.ajax({
+        url : img,
+        success : function(dzixml) {
+          var jQFooter = $(dzixml).find(".blog-posts");
+          jQFooter.find(".index-post").addClass("post-animated post-fadeInUp");
+          $(".blog-posts").append(jQFooter.html());
+          img = $(dzixml).find("#load-more-link").data("load");
+          if (img) {
+            $("#load-more-link").show();
+          } else {
+            $("#load-more-link").hide();
+            $("#blog-pager .no-more").addClass("show");
+          }
+  if (lazyLoadInstance) {
+    lazyLoadInstance.update();
+}
+ 
+ 
+
+        },
+        beforeSend : function() {
+          $("#blog-pager .loading").show();
+        },
+        complete : function() {
+          $("#blog-pager .loading").hide();
+        }
+      });
+      event.preventDefault();
+    });
+  });
+
+
+*/
+
+
+</script>
+
+
+
+
+<script>
+
+
+function database(fileName){
+var intview = 1 ;
+  var views ;  
+ var sha  ;
+  var filedata ;
+var filename = /* "firstfile.txt" */ "posts/"+fileName;
+            var filemessage = /* "uploading a file" */ fileName;
+            var filecontent = /* "The data of the file2." */ 10 ;
+        var basecontent = btoa(filecontent);
+        var apiurl = "https://api.github.com/repos/"+ github_un+"/"+github_un+".github.io" +"/contents/{+path}".replace('{+path}',filename);
+ filedata = '{"message":"'+filemessage+'","content":"'+basecontent+'"}';
+
+$.getJSON( apiurl , function(data) {
+  sha = data.sha ;
+  views = atob( data.content );
+    intview = parseInt(views, 10);
+
+basecontent = btoa(parseInt(views, 10) + Math.floor(Math.random() * 3 ) + 1);
+filedata = '{"message":"'+filemessage+'","content":"'+basecontent+'", "sha":"'+sha+'" }';
+
+}).always(function(response) {
+ document.getElementById("entry-view").innerHTML = intview+' ' +  view ;
+   $.ajax({ 
+            url: apiurl,
+            type: 'PUT',
+            beforeSend: function(xhr){xhr.setRequestHeader("Authorization", "token cc6c1caf6974f1372bcd8f83501a62eda18cc74f" ); },
+            data: filedata
+        }).done(function(response) {
+            console.log(response);	
+        });       
+}).fail(function(response) {
+if (response.status === 404 && up_date > 201908310000) {
+ 
+ }   
+});
+ }
+ 
+database(post_Id) ;
+  
+</script>
+
+
+<script>
+
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('/sw.js')
+             .then(function() { console.log("Service Worker Registered"); });
+  }
+</script>
+
+    
     
     
 </body>
