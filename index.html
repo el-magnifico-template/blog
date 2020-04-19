@@ -400,17 +400,9 @@ Tell ME More
         </li>
       
     
-      
-        <li class="has-sub">
-          <a href="https://tellmemore.life">Snippets   </a>
-          <ul class="sub-menu m-sub">
-          
-            <li><a href="https://tellmemore.life#">Example1</a></li>
-          
-            <li><a href="https://tellmemore.life#">Example2</a></li>
-          
-          </ul>
-          <div class="submenu-toggle"></div>
+       
+        <li>
+          <a href="https://tellmemore.life/">Snippets</a>
         </li>
       
     
@@ -3132,6 +3124,13 @@ request.send();
 Over 1,320,000+ Readers
 
                     </h3>
+                    
+                    
+                    
+            
+                    
+                    
+                    
 <p class="follow-by-email-text excerpt">Get fresh content from WPBeginner
 </p>
 <div class="follow-by-email-inner">
@@ -3143,10 +3142,10 @@ Over 1,320,000+ Readers
 </ul>
 </div>
 <div class="follow-by-email-inner">
-<form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit='window.open("https://feedburner.google.com/fb/a/mailverify?uri=ElMagnifico", "popupwindow", "scrollbars=yes,width=550,height=520"); return true' target="popupwindow">
+<form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit='window.open("https://feedburner.google.com/fb/a/mailverify?uri=tellmemore1", "popupwindow", "scrollbars=yes,width=550,height=520"); return true' target="popupwindow">
 <input autocomplete="off" class="follow-by-email-address" name="email" placeholder="Adresse e-mail" type="email">
 <input class="follow-by-email-submit" type="submit" value="S'inscrire">
-<input name="uri" type="hidden" value="ElMagnifico">
+<input name="uri" type="hidden" value="tellmemore1">
 <input name="loc" type="hidden" value="en_US">
 </form>
 </div>
@@ -3208,6 +3207,15 @@ Over 1,320,000+ Readers
     <li>
       <a class='label-name'  href="/tags#conference">
         conference
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#jekyll">
+        jekyll
         <span>(1)</span>
       </a>
     </li>
@@ -3289,6 +3297,15 @@ Over 1,320,000+ Readers
     <li>
       <a class='label-name'  href="/tags#sticky">
         sticky
+        <span>(1)</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class='label-name'  href="/tags#tutorial">
+        tutorial
         <span>(1)</span>
       </a>
     </li>
@@ -3398,17 +3415,9 @@ El magnifico
         </li>
       
     
-      
-        <li class="has-sub">
-          <a href="https://tellmemore.life">Snippets   </a>
-          <ul class="sub-menu m-sub">
-          
-            <li><a href="https://tellmemore.life#">Example1</a></li>
-          
-            <li><a href="https://tellmemore.life#">Example2</a></li>
-          
-          </ul>
-          <div class="submenu-toggle"></div>
+       
+        <li>
+          <a href="https://tellmemore.life/">Snippets</a>
         </li>
       
     
@@ -3685,49 +3694,57 @@ for (let i = 0; i < acbox.length; i++) {
 </script>
 
 
-
+ 
 
 <script>
 
 
 function database(fileName){
+var github_un = "el-magnifico-template";
+var db ="db";
 var intview = 1 ;
   var views ;  
  var sha  ;
   var filedata ;
-var filename = /* "firstfile.txt" */ "posts/"+fileName;
-            var filemessage = /* "uploading a file" */ fileName;
-            var filecontent = /* "The data of the file2." */ 10 ;
-        var basecontent = btoa(filecontent);
-        var apiurl = "https://api.github.com/repos/"+ github_un+"/"+github_un+".github.io" +"/contents/{+path}".replace('{+path}',filename);
+var filename =  "_posts/2017-09-12-"+fileName+".md";
+var filemessage = "";
+var filecontent = 10 ;
+var basecontent = btoa(filecontent);
+var apiurl = "https://api.github.com/repos/"+ github_un+"/"+db+"/contents/{+path}".replace('{+path}',filename);
+        
  filedata = '{"message":"'+filemessage+'","content":"'+basecontent+'"}';
+ 
+ 
+var request = new XMLHttpRequest();
+request.open('GET', apiurl , true);
 
-$.getJSON( apiurl , function(data) {
-  sha = data.sha ;
-  views = atob( data.content );
+request.onload = function() {
+  if (this.status >= 200 && this.status < 400) {
+  
+  var data = JSON.parse(this.response);
+    sha = data.sha ;
+      views = atob( data.content );
     intview = parseInt(views, 10);
-
 basecontent = btoa(parseInt(views, 10) + Math.floor(Math.random() * 3 ) + 1);
 filedata = '{"message":"'+filemessage+'","content":"'+basecontent+'", "sha":"'+sha+'" }';
 
-}).always(function(response) {
- document.getElementById("entry-view").innerHTML = intview+' ' +  view ;
-   $.ajax({ 
-            url: apiurl,
-            type: 'PUT',
-            beforeSend: function(xhr){xhr.setRequestHeader("Authorization", "token cc6c1caf6974f1372bcd8f83501a62eda18cc74f" ); },
-            data: filedata
-        }).done(function(response) {
-            console.log(response);	
-        });       
-}).fail(function(response) {
-if (response.status === 404 && up_date > 201908310000) {
- 
- }   
-});
+ var request = new XMLHttpRequest();
+request.open('PUT', apiurl, true);
+request.setRequestHeader('Authorization', 'token 9d8efac36538af0b357cd50f31a4a164aa5cfbfe');
+request.send(filedata);
+
+  } else {
+   var request = new XMLHttpRequest();
+request.open('PUT', apiurl, true);
+request.setRequestHeader('Authorization', 'token 9d8efac36538af0b357cd50f31a4a164aa5cfbfe');
+request.send(filedata);
+  }
+};
+
+request.send(); 
+
  }
  
-//database(post_Id) ;
   
 </script>
 
