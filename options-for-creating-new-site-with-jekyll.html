@@ -377,12 +377,22 @@ ul,ul li{list-style:none}#content-wrapper,#main-wrapper,#outer-wrapper,#sidebar-
 const isBot = !("onscroll" in window) ||	/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent);
 
 */
+/*! lozad.js - v1.14.0 - 2019-10-19
+* https://github.com/ApoorvSaxena/lozad.js
+* Copyright (c) 2019 Apoorv Saxena; Licensed MIT */
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t=t||self).lozad=e()}(this,function(){"use strict";
+/**
+   * Detect IE browser
+   * @const {boolean}
+   * @private
+   */var d="undefined"!=typeof document&&document.documentMode,c={rootMargin:"0px",threshold:0,load:function(t){if("picture"===t.nodeName.toLowerCase()){var e=document.createElement("img");d&&t.getAttribute("data-iesrc")&&(e.src=t.getAttribute("data-iesrc")),t.getAttribute("data-alt")&&(e.alt=t.getAttribute("data-alt")),t.append(e)}if("video"===t.nodeName.toLowerCase()&&!t.getAttribute("data-src")&&t.children){for(var r=t.children,a=void 0,o=0;o<=r.length-1;o++)(a=r[o].getAttribute("data-src"))&&(r[o].src=a);t.load()}if(t.getAttribute("data-src")&&(t.src=t.getAttribute("data-src")),t.getAttribute("data-srcset")&&t.setAttribute("srcset",t.getAttribute("data-srcset")),t.getAttribute("data-background-image"))t.style.backgroundImage="url('"+t.getAttribute("data-background-image").split(",").join("'),url('")+"')";else if(t.getAttribute("data-background-image-set")){var i=t.getAttribute("data-background-image-set").split(","),n=i[0].substr(0,i[0].indexOf(" "))||i[0];// Substring before ... 1x
+n=-1===n.indexOf("url(")?"url("+n+")":n,1===i.length?t.style.backgroundImage=n:t.setAttribute("style",(t.getAttribute("style")||"")+"background-image: "+n+"; background-image: -webkit-image-set("+i+"); background-image: image-set("+i+")")}t.getAttribute("data-toggle-class")&&t.classList.toggle(t.getAttribute("data-toggle-class"))},loaded:function(){}};function l(t){t.setAttribute("data-loaded",!0)}var b=function(t){return"true"===t.getAttribute("data-loaded")};return function(){var r,a,o=0<arguments.length&&void 0!==arguments[0]?arguments[0]:".lozad",t=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},e=Object.assign({},c,t),i=e.root,n=e.rootMargin,d=e.threshold,u=e.load,s=e.loaded,g=void 0;return"undefined"!=typeof window&&window.IntersectionObserver&&(g=new IntersectionObserver((r=u,a=s,function(t,e){t.forEach(function(t){(0<t.intersectionRatio||t.isIntersecting)&&(e.unobserve(t.target),b(t.target)||(r(t.target),l(t.target),a(t.target)))})}),{root:i,rootMargin:n,threshold:d})),{observe:function(){for(var t=function(t){var e=1<arguments.length&&void 0!==arguments[1]?arguments[1]:document;return t instanceof Element?[t]:t instanceof NodeList?t:e.querySelectorAll(t)}(o,i),e=0;e<t.length;e++)b(t[e])||(g?g.observe(t[e]):(u(t[e]),l(t[e]),s(t[e])))},triggerLoad:function(t){b(t)||(u(t),l(t),s(t))},observer:g}}});
 
 
-var LazyLoad=function(){"use strict";function t(){return(t=Object.assign||function(t){for(var n=1;n<arguments.length;n++){var e=arguments[n];for(var o in e)Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o])}return t}).apply(this,arguments)}var n="undefined"!=typeof window,e=n&&!("onscroll"in window)||"undefined"!=typeof navigator&&/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),o=n&&"IntersectionObserver"in window,a=n&&"classList"in document.createElement("p"),r={elements_selector:"img",container:e||n?document:null,threshold:300,thresholds:null,data_src:"src",data_srcset:"srcset",data_sizes:"sizes",data_bg:"bg",data_poster:"poster",class_loading:"loading",class_loaded:"loaded",class_error:"error",load_delay:0,auto_unobserve:!0,callback_enter:null,callback_exit:null,callback_loading:null,callback_loaded:null,callback_error:null,callback_finish:null,use_native:!1},i=function(n){return t({},r,n)},s=function(t,n){var e,o=new t(n);try{e=new CustomEvent("LazyLoad::Initialized",{detail:{instance:o}})}catch(t){(e=document.createEvent("CustomEvent")).initCustomEvent("LazyLoad::Initialized",!1,!1,{instance:o})}window.dispatchEvent(e)},c=function(t,n){return t.getAttribute("data-"+n)},l=function(t,n,e){var o="data-"+n;null!==e?t.setAttribute(o,e):t.removeAttribute(o)},u=function(t,n){return l(t,"ll-status",n)},d=function(t,n){return l(t,"ll-timeout",n)},f=function(t){return c(t,"ll-timeout")},_=function(t){for(var n,e=[],o=0;n=t.children[o];o+=1)"SOURCE"===n.tagName&&e.push(n);return e},v=function(t,n,e){e&&t.setAttribute(n,e)},g=function(t,n){v(t,"sizes",c(t,n.data_sizes)),v(t,"srcset",c(t,n.data_srcset)),v(t,"src",c(t,n.data_src))},h={IMG:function(t,n){var e=t.parentNode;e&&"PICTURE"===e.tagName&&_(e).forEach((function(t){g(t,n)}));g(t,n)},IFRAME:function(t,n){v(t,"src",c(t,n.data_src))},VIDEO:function(t,n){_(t).forEach((function(t){v(t,"src",c(t,n.data_src))})),v(t,"poster",c(t,n.data_poster)),v(t,"src",c(t,n.data_src)),t.load()}},b=function(t,n,e){var o=t.tagName,a=h[o];a?(a(t,n),function(t){t&&(t.loadingCount+=1)}(e)):function(t,n){var e=c(t,n.data_src),o=c(t,n.data_bg);e&&(t.style.backgroundImage='url("'.concat(e,'")')),o&&(t.style.backgroundImage=o)}(t,n)},m=function(t,n){a?t.classList.add(n):t.className+=(t.className?" ":"")+n},p=function(t,n){a?t.classList.remove(n):t.className=t.className.replace(new RegExp("(^|\\s+)"+n+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,"")},E=function(t,n,e,o){t&&(void 0===o?void 0===e?t(n):t(n,e):t(n,e,o))},y=function(t,n){n&&(n.loadingCount-=1,L(t,n))},L=function(t,n){n.toLoadCount||n.loadingCount||E(t.callback_finish,n)},w=function(t,n,e){t.addEventListener(n,e)},I=function(t,n,e){t.removeEventListener(n,e)},k=function(t,n,e){I(t,"load",n),I(t,"loadeddata",n),I(t,"error",e)},C=function(t,n,e){var o=function o(r){!function(t,n,e){var o=t.target;u(o,"loaded"),p(o,n.class_loading),m(o,n.class_loaded),E(n.callback_loaded,o,e),y(n,e)}(r,n,e),k(t,o,a)},a=function a(r){!function(t,n,e){var o=t.target;u(o,"error"),p(o,n.class_loading),m(o,n.class_error),E(n.callback_error,o,e),y(n,e)}(r,n,e),k(t,o,a)};!function(t,n,e){w(t,"load",n),w(t,"loadeddata",n),w(t,"error",e)}(t,o,a)},A=["IMG","IFRAME","VIDEO"],z=function(t,n,e){(function(t){return A.indexOf(t.tagName)>-1})(t)&&(C(t,n,e),m(t,n.class_loading)),b(t,n,e),function(t,n){n&&(n.toLoadCount-=1,L(t,n))}(n,e)},O=function(t,n,e){z(t,n,e),u(t,"loading"),E(n.callback_loading,t,e),E(n.callback_reveal,t,e),function(t,n){if(n){var e=n._observer;e&&n._settings.auto_unobserve&&e.unobserve(t)}}(t,e)},N=function(t){var n=f(t);n&&(clearTimeout(n),d(t,null))},M=function(t,n,e){var o=e._settings;E(o.callback_enter,t,n,e),o.load_delay?function(t,n,e){var o=n.load_delay,a=f(t);a||(a=setTimeout((function(){O(t,n,e),N(t)}),o),d(t,a))}(t,o,e):O(t,o,e)},R=["IMG","IFRAME"],x=function(t){return t.use_native&&"loading"in HTMLImageElement.prototype},T=function(t,n,e){t.forEach((function(t){-1!==R.indexOf(t.tagName)&&(t.setAttribute("loading","lazy"),function(t,n,e){z(t,n,e),u(t,"native")}(t,n,e))})),e.toLoadCount=0},F=function(t,n){!function(t){t.
-disconnect()}(t),function(t,n){n.forEach((function(n){t.observe(n),u(n,"observed")}))}(t,n)},G=function(t){var n;o&&!x(t._settings)&&(t._observer=new IntersectionObserver((function(n){n.forEach((function(n){return function(t){return t.isIntersecting||t.intersectionRatio>0}(n)?M(n.target,n,t):function(t,n,e){var o=e._settings;E(o.callback_exit,t,n,e),o.load_delay&&N(t)}(n.target,n,t)}))}),{root:(n=t._settings).container===document?null:n.container,rootMargin:n.thresholds||n.threshold+"px"}))},j=function(t){return Array.prototype.slice.call(t)},D=function(t){return t.container.querySelectorAll(t.elements_selector)},P=function(t){return!function(t){return null!==c(t,"ll-status")}(t)||function(t){return"observed"===c(t,"ll-status")}(t)},S=function(t){return function(t){return"error"===c(t,"ll-status")}(t)},U=function(t,n){return function(t){return j(t).filter(P)}(t||D(n))},V=function(t){var n,e=t._settings;(n=D(e),j(n).filter(S)).forEach((function(t){p(t,e.class_error),function(t){l(t,"ll-status",null)}(t)})),t.update()},$=function(t,e){var o;this._settings=i(t),this.loadingCount=0,G(this),o=this,n&&window.addEventListener("online",(function(t){V(o)})),this.update(e)};return $.prototype={update:function(t){var n=this._settings,a=U(t,n);this.toLoadCount=a.length,!e&&o?x(n)?T(a,n,this):F(this._observer,a):this.loadAll(a)},destroy:function(){this._observer&&this._observer.disconnect(),delete this._observer,delete this._settings,delete this.loadingCount,delete this.toLoadCount},loadAll:function(t){var n=this,e=this._settings;U(t,e).forEach((function(t){O(t,e,n)}))},load:function(t){O(t,this._settings,this)}},$.load=function(t,n){var e=i(n);O(t,e)},n&&function(t,n){if(n)if(n.length)for(var e,o=0;e=n[o];o+=1)s(t,e);else s(t,n)}($,window.lazyLoadOptions),$}();
- 
-var lazyLoadInstance = new LazyLoad({ }); 
+
+
+
+
 
 
 function loadScript(src, callback) {
@@ -520,7 +530,6 @@ Options for creating a new site with Jekyll
 
 
 <div class="entry-meta">
-<span class="entry-author">jane</span>
 <span class="entry-time"><time class=" timeago published" datetime="2019-01-23T00:00:00+01:00">January 23, 2019</time></span>
 <span class="entry-comments-link"><a href="#comments">0 Commentaires</a></span>
 <span class="entry-readTime" id="entry-readTime">
@@ -535,7 +544,7 @@ Options for creating a new site with Jekyll
 </div>
 <div class="clearfix"></div>
 <div id="toc_container">
-<div id="toc_list" onclick="if (document.getElementById('toc').style.display === 'none') { document.getElementById('toc').style.display = 'block'; } else { document.getElementById('toc').style.display = 'none'; }" role="button" tabindex="0">
+<div id="" onclick="if (document.getElementById('toc').style.display === 'none') { document.getElementById('toc').style.display = 'block'; } else { document.getElementById('toc').style.display = 'none'; }" role="button" tabindex="0">
 TABLE OF CONTENTS
 <svg height="18" viewbox="0 0 24 24" width="18"><path d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" fill="#000000"></path></svg>
 </div>
@@ -653,7 +662,7 @@ TABLE OF CONTENTS
     
 
             
-<article class="related-item post "><div class="entry-image"><a class="entry-image-link" href="/we-all-wait-for-summer"><img title="We all wait for summer" alt="We all wait for summer" class="entry-thumb " data-src="/assets/images/1"></a></div>
+<article class="related-item post "><div class="entry-image"><a class="entry-image-link" href="/we-all-wait-for-summer"><img title="We all wait for summer" alt="We all wait for summer" class="lozad entry-thumb " data-src="/assets/images/1"></a></div>
 <div class="entry-header">
 <h2 class="entry-title"><a href="/we-all-wait-for-summer">We all wait for summer</a></h2>
 <div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-23T00:00:00+01:00">January 23, 2019</time></span></div>
@@ -676,7 +685,7 @@ TABLE OF CONTENTS
     
 
             
-<article class="related-item post "><div class="entry-image"><a class="entry-image-link" href="/tree-of-codes"><img title="Tree of Codes" alt="Tree of Codes" class="entry-thumb " data-src="/assets/images/2"></a></div>
+<article class="related-item post "><div class="entry-image"><a class="entry-image-link" href="/tree-of-codes"><img title="Tree of Codes" alt="Tree of Codes" class="lozad entry-thumb " data-src="/assets/images/2"></a></div>
 <div class="entry-header">
 <h2 class="entry-title"><a href="/tree-of-codes">Tree of Codes</a></h2>
 <div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-23T00:00:00+01:00">January 23, 2019</time></span></div>
@@ -699,7 +708,7 @@ TABLE OF CONTENTS
     
 
             
-<article class="related-item post "><div class="entry-image"><a class="entry-image-link" href="/the-best-organizer-software"><img title="The Best Organizer Software" alt="The Best Organizer Software" class="entry-thumb " data-src="/assets/images/logo-high-resolution"></a></div>
+<article class="related-item post "><div class="entry-image"><a class="entry-image-link" href="/the-best-organizer-software"><img title="The Best Organizer Software" alt="The Best Organizer Software" class="lozad entry-thumb " data-src="/assets/images/logo-high-resolution"></a></div>
 <div class="entry-header">
 <h2 class="entry-title"><a href="/the-best-organizer-software">The Best Organizer Software</a></h2>
 <div class="entry-meta"><span class="entry-time"><time class="published" datetime="2019-01-23T00:00:00+01:00">January 23, 2019</time></span></div>
@@ -814,7 +823,7 @@ if(comments) {
     <!-- Sidebar Wrapper -->
 <aside class="sidebar-ads-active" id="sidebar-wrapper">
  
-<div class="sidebar widget-ready section" id="sidebar" name="Main Sidebar">
+<div class="sidebar widget-ready section" id="sidebar">
 <div class="widget PopularPosts" data-version="2" id="PopularPosts1">
 <div class="widget-title">
 <h3 class="title">Most Popular</h3>
@@ -824,7 +833,7 @@ if(comments) {
 
 <article class="popular-post post item-0">
 <a class="entry-image-link" href="link">
-<img alt="title" class="entry-thumb" title="title" data-src="/assets/images/logo-high-resolution">
+<img alt="title" class="lozad entry-thumb" title="title" data-src="/assets/images/logo-high-resolution">
 </a>
 <div class="entry-header">
 <h2 class="entry-title">
@@ -1073,19 +1082,9 @@ Over 1,320,000+ Readers
 </span>
 </div>
 </div>
-</div><div class='widget LinkList'  id='LinkList158'>
-<div class='widget-content'>
-<div class='widget-title'>
-<h3 class='title'>Follow Us</h3>
 </div>
-<ul class='social-footer social social-bg-hover'>
-<li class='facebook'><a class='facebook' href='/' target='_blank'></a></li>
-<li class='twitter'><a class='twitter' href='/' target='_blank'></a></li>
-<li class='youtube'><a class='youtube' href='/' target='_blank'></a></li>
-<li class='instagram'><a class='instagram' href='/' target='_blank'></a></li>
- </ul>
+
 </div>
-</div></div>
 </div>
 <div id='footerbar'>
 <div class='container row-x1'>
@@ -1112,8 +1111,8 @@ Over 1,320,000+ Readers
 
 	    <div id="slide-menu">
     <div class="slide-menu-header">
-        <div class="mobile-logo"><a href="https://el-magnifico-template.blogspot.com/">
-El magnifico
+        <div class="mobile-logo"><a href="/">
+Tell ME More
 </a></div>
         <span class="hide-mobile-menu"></span>
     </div>
@@ -1149,24 +1148,7 @@ El magnifico
            
         </div>
         
-        
-        
-        <div class="social-mobile">
-            <ul class="social-footer social">
-                <li class="facebook">
-                    <a aria-label="facebook" class="facebook" href="#" target="_blank"></a>
-                </li>
-                <li class="twitter">
-                    <a aria-label="twitter" class="twitter" href="#" target="_blank"></a>
-                </li>
-                <li class="youtube">
-                    <a aria-label="youtube" class="youtube" href="#" target="_blank"></a>
-                </li>
-                <li class="instagram">
-                    <a aria-label="instagram" class="instagram" href="#" target="_blank"></a>
-                </li>
-            </ul>
-        </div>
+      
     </div>
 </div>
 <div class="overlay"></div>
@@ -1199,13 +1181,15 @@ function loadImg(){
 	 imgs[i].setAttribute("data-src", img ); 
 }
 }
+const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
 
-lazyLoadInstance.update();
+// lazyLoadInstance.update();
 
 }
 loadImg();
 
-
+ 
 
 /* 
   window.addEventListener("pageshow", myFunction);
