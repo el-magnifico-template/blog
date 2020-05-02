@@ -1,10 +1,1 @@
-{
-  "appName" : "Tell-ME-More",
-  "appDescription" : "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.",
-  "favicons" : {
-    "developerName":"",
-    "developerURL":"https://tellmemore.life",
-    "background":"#ffffff",
-    "theme_color":"#3455DB"
-  }
-}
+{"appName":"dites-moi-plus","appDescription":"des informations de dernière heure, des quiz, des vidéos, des actualités  des recettes, des hacks de bricolage et tout le buzz tendance que vous souhaitez partager avec vos amis, et aussi des histoires et idées pour vous aider, vous et votre entreprise, à mieux vous développer.","favicons":{"developerName":"","developerURL":"https://tellmemore.life","background":"#ffffff","theme_color":"#3455DB"}}

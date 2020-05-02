@@ -1,46 +1,9 @@
 const offlinePageUrl = '/offline.html'
-const siteCacheName = 'Tell-ME-Morev1'
+const siteCacheName = 'dites-moi-plusv1'
 const dependenciesUrls = [
-
-
-"/404.html",
-
-
-
-"/about.html",
-
-
-
-"amp",
-
-
-
-"img",
-
-
-
-"offline.html",
-
-
-
-"/pages/random",
-
-
-
-"/search/",
-
-
-
-"tags",
-
-
-
-"test",
-
-
+"/404.html","/about.html","amp","img","offline.html","/pages/random","/search","tags","/pages/tags_list","test",
   "/manifest.json",
   "/favicon.ico",
-    "/",
    "/assets/online.svg"
 ];
 
