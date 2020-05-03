@@ -1330,30 +1330,7 @@ blockquote {
   background-color: rgba(0,0,0,.1)
 }
 
-#main-wrapper iframe {
-  width: 100%!important
-}
-@media screen and (max-width:960px) {
-  #main-wrapper iframe {
-    max-height: 90%
-  }
-}
-@media screen and (max-width:768px) {
-  #main-wrapper iframe {
-    max-height: 75%
-  }
-}
-@media screen and (max-width:600px) {
-  #main-wrapper iframe {
-    max-height: 60%
-  }
-}
-@media screen and (max-width:480px) {
-  #main-wrapper iframe {
-    height: auto!important;
-    max-height: auto!important
-  }
-}
+ 
 ::-webkit-scrollbar {
   background-color: #efeff2;
   width: 12px
@@ -1366,34 +1343,7 @@ blockquote {
 ::-webkit-scrollbar-track {
   border-left: 1px solid #eaeaea
 }
-.social a:before {
-  font-family: icomoon;
-  font-style: normal
-}
-.social .facebook a:before {
-  content: "\ea90"
-}
-.social .twitter a:before {
-  content: "\ea96"
-}
-.social .youtube a:before {
-  content: "\ea9d"
-}
-.social .instagram a:before {
-  content: "\ea92"
-}
-.social-bg-hover .facebook a {
-  background: #3b5998
-}
-.social-bg-hover .twitter a {
-  background: #55acee
-}
-.social-bg-hover .youtube a {
-  background: #b31217
-}
-.social-bg-hover .instagram a {
-  background: #3f729b
-}
+
 @media screen and (max-width:1165px) {
   #content-wrapper > .container,
   #featured-wrapper .container,
@@ -1615,6 +1565,5 @@ ol {
 }
 
 .search-toggle {
-    
-    position: absolute;
+        float: right;
     }
