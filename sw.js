@@ -4,7 +4,7 @@ const dependenciesUrls = [
 "/404.html","about","amp","contact","infos-legales","offline.html","/search","tags","/pages/tags_list",
   "/manifest.json",
   "/favicon.ico",
-  "/",
+  "https://tellmemore.life",
    "/assets/online.svg"
 ];
 
