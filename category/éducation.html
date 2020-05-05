@@ -77,15 +77,12 @@ function loadImg(){
 	  else{
            imgs[i].setAttribute("test", x );
           imgs[i].setAttribute("data-src", img ); }
-	 
-	 
-	 if (i<10){
+
 var preloadLink = document.createElement("link");
-preloadLink.href = img ;
-preloadLink.rel = "preload";
-preloadLink.as = "image";
+preloadLink.href = "https://tellmemore.life" +  img ;
+preloadLink.rel = "prefetch";
 document.head.appendChild(preloadLink); 
-}	 
+	 
 }
 }
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'

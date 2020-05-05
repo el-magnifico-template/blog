@@ -77,15 +77,12 @@ function loadImg(){
 	  else{
            imgs[i].setAttribute("test", x );
           imgs[i].setAttribute("data-src", img ); }
-	 
-	 
-	 if (i<10){
+
 var preloadLink = document.createElement("link");
-preloadLink.href = img ;
-preloadLink.rel = "preload";
-preloadLink.as = "image";
+preloadLink.href = "https://tellmemore.life" +  img ;
+preloadLink.rel = "prefetch";
 document.head.appendChild(preloadLink); 
-}	 
+	 
 }
 }
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'
@@ -217,48 +214,9 @@ function loadDisqus() {
 
   
 var string="2020-05-04T12:20:00+0000";
- 	
- 	      function substitute(string, number) {
-        return string.replace(/%d/i, number);
-      }
-
-var date = new Date(string); // some mock date
-
-var  distanceMillis=new Date().getTime() - date.getTime();
-  
-         var $lseconds= "moins d'une minute",
-        $lminute= "environ une minute",
-        $lminutes= "environ %d minutes",
-        $lhour= "environ une heur",
-        $lhours= "environ %d heures",
-        $lday= "environ un jour",
-        $ldays= "environ %d jours",
-        $lmonth= "environ un mois",
-        $lmonths= "environ %d mois",
-        $lyear= "un an",
-        $lyears= "%d ans";
-        
-      var seconds = Math.abs(distanceMillis) / 1000;
-      var minutes = seconds / 60;
-      var hours = minutes / 60;
-      var days = hours / 24;
-      var years = days / 365;
-
- var words = seconds < 45 && substitute($lseconds, Math.round(seconds)) ||
-        seconds < 90 && substitute($lminute, 1) ||
-        minutes < 45 && substitute($lminutes, Math.round(minutes)) ||
-        minutes < 90 && substitute($lhour, 1) ||
-        hours < 24 && substitute($lhours, Math.round(hours)) ||
-        hours < 42 && substitute($lday, 1) ||
-        days < 30 && substitute($ldays, Math.round(days)) ||
-        days < 45 && substitute($lmonth, 1) ||
-        days < 365 && substitute($lmonths, Math.round(days / 30)) ||
-        years < 1.5 && substitute($lyear, 1) ||
-        substitute($lyears, Math.round(years));
-        
-document.getElementById("timeago").innerHTML="il y a "+words;
-        
-
+function a(g,h){return g.replace(/%d/i,h)}
+var b=Math.abs((new Date).getTime()-(new Date(string)).getTime())/1E3,c=b/60,d=c/60,e=d/24,f=e/365,k=45>b&&a("moins d'une minute",Math.round(b))||90>b&&a("environ une minute",1)||45>c&&a("environ %d minutes",Math.round(c))||90>c&&a("environ une heur",1)||24>d&&a("environ %d heures",Math.round(d))||42>d&&a("environ un jour",1)||30>e&&a("environ %d jours",Math.round(e))||45>e&&a("environ un mois",1)||365>e&&a("environ %d mois",Math.round(e/30))||1.5>f&&a("un an",1)||a("%d ans",Math.round(f));
+document.getElementById("timeago").innerHTML="il y a "+k;
 
 
 
