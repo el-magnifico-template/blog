@@ -1145,5 +1145,8 @@ ol {
 }
 
 .search-toggle {
-        float: right;
-    }
+
+position: absolute;
+
+    right: 0;    
+}
