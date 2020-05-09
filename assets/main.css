@@ -1,5 +1,4 @@
 #breadcrumb,
-body,
 ul {
   font-weight: 400
 }
@@ -36,9 +35,7 @@ img {
   top: 0
 }
 
-body {
-  word-wrap: break-word
-}
+ 
 .entry-info .entry-title {
   text-shadow: 0 1px 2px rgba(0,0,0,.5)
 }
@@ -57,23 +54,29 @@ h4,
 ul {
   margin-top: 1.5rem
 }
-@font-face {
-  font-family: icomoon;
-  src: url(/assets/css/icomoon.ttf) format('truetype'),url(/assets/css/icomoon.woff) format('woff'),url(/assets/css/icomoon.svg) format('svg');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal
+
+fdf
+
+
+.icon {
+  display: inline-block;
+  width: 1em;
+    margin-right: 4px;
+  height: 1em;
+
+    top: .125em;
+  position: relative;
 }
+
+
+
+
 a,
 a:visited,
 blockquote,
 body,
-center,
-code,
-del,
 div,
 em,
-form,
 h1,
 h2,
 h3,
@@ -114,20 +117,18 @@ img {
 a {
   color: #3f51b5
 }
-a img {
-  border: 0
-}
+
 body {
   background-color: #00000026;
   font-family: '-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif',sans-serif;
   font-size: 17px;
   color: #3d4144;
   font-style: normal;
-  line-height: 1.4em
+  line-height: 1.4em;
+  word-wrap: break-word
 }
 .skip-links {
-  display: none!important;
-  height: 1px
+  display: none
 }
 h1,
 h2,
@@ -193,12 +194,8 @@ h2 {
   left: 0;
   overflow: hidden;
   width: 100%;
-  background-image: linear-gradient(to bottom,transparent,rgba(0,0,0,.3));
-  padding: 15px
 }
-.entry-info .entry-meta {
-  color: #eee
-}
+
 .blog-title a,
 .entry-info .entry-title a {
   color: #fff
@@ -218,12 +215,9 @@ h2 {
 }
 .headerify,
 .headerify-wrap {
-  float: left;
-  width: 100%;
+
   height: 60px;
   background-color: #3f51b5;
-  padding: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.05)
 }
 .main-logo-wrap {
   position: relative;
@@ -234,25 +228,16 @@ h2 {
 
 
 .main-logo {
-
     width: 100%;
-    /* height: 34px; */
     padding: 13px 0;
-    /* margin: 0; */
 }
 
 .PopularPosts .popular-post.item-0,
 .block-posts-1 .item-1,
-.blog-title,
-.mobile-menu>ul {
+.blog-title {
   margin: 0
 }
-.main-menu-wrap {
-  position: static;
-  float: left;
-  height: 60px;
-  margin: 0
-}
+ 
 #magify-main-menu {
   position: static;
   width: 100%;
@@ -262,19 +247,10 @@ h2 {
   position: relative;
   float: left;
   display: inline-block;
-  padding: 0;
-  margin: 0
+
 }
-#magify-main-menu-nav > li:hover > a {
-  background-color: rgba(255,255,255,.05);
-  color: #fff
-}
-.search-toggle:after {
-  font-family: icomoon,sans-serif;
-  font-weight: 900;
-  content: "\e986";
-  margin: 0
-}
+
+
 .PopularPosts .entry-header,
 .index-post .entry-header {
   overflow: hidden
@@ -302,7 +278,6 @@ h2 {
   margin: 0 0 -2px
 }
 #comments,
-#disqus_thread,
 #main-wrapper #main,
 #sidebar-wrapper .sidebar,
 .block-posts .widget,
@@ -329,14 +304,6 @@ h2 {
 }
 
 
-#breadcrumb .delimiter:after {
-  font-family: icomoon,sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  content: '\ea3c';
-  font-size: 9px;
-  margin: 0 3px
-}
 .block-posts .widget {
   position: relative;
   background-color: #fff;
@@ -362,7 +329,7 @@ h2 {
 .entry-meta span:before {
   font-size: 11px;
   font-weight: 400;
-  font-display: swap
+  
 }
 .index-post-wrap {
   position: relative;
@@ -420,24 +387,8 @@ h2 {
   font-style: normal;
   margin: 0 10px 0 0
 }
-.entry-meta span:before {
-  display: inline-block;
-  font-family: icomoon,sans-serif;
-  font-style: normal;
-  margin: 0 5px 0 0
-}
- .entry-time:before {
-  content: '\e953'
-}
- .entry-comments-link:before {
-  content: '\e96f'
-}
- .entry-readTime:before {
-  content: '\e952'
-}
- .entry-view:before {
-  content: '\e9ce'
-}
+
+
 .item-post-inner {
   position: relative;
   background-color: #fff;
@@ -661,12 +612,8 @@ text-align: center;
 
 
 .footer-menu ul li a {
-    /* float: left; */
-    /* height: 30px; */
     font-size: 14px;
     color: #fff;
-    /* line-height: 30px; */
-    /* padding: 0; */
     margin: 0 0 0 20px;
 }
 @media screen and (max-width:680px) {
@@ -713,15 +660,7 @@ text-align: center;
 
 
 
-.entry-thumb {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
- }
+
 .block-posts .widget-content {
   width: 100%;
   position: relative;
@@ -919,14 +858,14 @@ ol {
   font-size: 14px;
   color: #fff;
   font-weight: 600;
-  text-transform: uppercase;
-  line-height: 60px;
+   line-height: 60px;
   padding: 0 15px;
   margin: 0
 }
 .search-toggle {
   position: absolute;
-  right: 0
+  right: 0;
+  top: 0
 }
 
 
